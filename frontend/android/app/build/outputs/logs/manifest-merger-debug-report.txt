@@ -1,0 +1,480 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:1-48:12
+MERGED from [:react-native-screens] /home/lucas/Dev/lol/LolFrontend/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-reanimated] /home/lucas/Dev/lol/LolFrontend/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-gesture-handler] /home/lucas/Dev/lol/LolFrontend/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.59.10] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.59.10.aar/cbd41c1d6d4d6f01c200eac6bc1500e9/AndroidManifest.xml:2:1-13:12
+MERGED from [:expo-permissions] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/37950f6cc4b19d6a724bde17acbe03bb/AndroidManifest.xml:17:1-22:12
+MERGED from [:unimodules-react-native-adapter] /home/lucas/Dev/lol/LolFrontend/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-app-loader-provider] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-constants] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-constants/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-30:12
+MERGED from [:expo-font] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-font/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-keep-awake] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-keep-awake/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-linear-gradient] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
+MERGED from [:expo-sqlite] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-sqlite/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-web-browser] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-web-browser/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-barcode-scanner-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-barcode-scanner-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-camera-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-camera-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-constants-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-constants-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-face-detector-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-face-detector-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-file-system-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-file-system-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-font-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-font-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-permissions-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-permissions-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-task-manager-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-task-manager-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-core] /home/lucas/Dev/lol/LolFrontend/node_modules/@unimodules/core/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-image-loader-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-sensors-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.transition:transition:1.1.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/transition-1.1.0.aar/2c626617b53abe75a3323caa3ade1497/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/68865fccd40925e9ada0b5a2817b41b8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/f3d74774cde92e92cfc1e43f2f9654f8/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/97d00999c30deeade6365c0f1c6e18d7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/663b0f2f3bec116262637383e6f6f3bd/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/5f6660c227b978e84bde6e5183c8d282/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/a85ae2eebaa54bef134951e63c67e43a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/4bd02ff77c3bd953c901855cdc71744b/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.fragment:fragment:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/8ee07570946b76b64a3504eb94fb5ee3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/51f398339a9a3ec1424fa992cd728fff/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/e2b5e4b06f6f60c3dc43c1eec3aa5ac0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/eb237e792ef30dd023e5273f8d371964/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0.aar/4a4d1871895f689151921d846b816754/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/aa3c3c46f463e4836cf9d2eee95aaf5a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/127f8f3f4ec5379922d0fe80f15acbe0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/3b6f91e6342b40443032860f12948edc/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/129e1fab6ee431196375f2252dc4eeb2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/b72c57ebe9a9c05822951921cb23f955/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/9ed46e3fd495553feddde5e6d7d82160/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/8ae31b064f69c8e93e853753f65c0b09/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/9ac3dc5d8d6dc466d5fe7ba45e092434/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/ef1a1d8f64220c0a6b18361434571457/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/5210f349cf43844c9c4610653626ce05/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/b41173a5c5d9aa996aacd512f24f8776/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/8eb3852e945e0ceac50aa32fd3892f87/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/62594978085688b0288b3691d5638c5c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/c3b95d04c04ab49c7e142f7acac753ad/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/290dd4b1c1666549d24c608dfcfbddeb/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/4d1881344ead3d40902ba06123548264/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/a4c2826608e4819544da06a0b8c504ea/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/74a3a972e9d56007596f4ab3950264cd/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/4c653ebad2ef5ca2fe0e5a37f4e489d4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/f9ea34ed6227e25c03aa8b78409253ad/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/016ba4c5c6cd9ded15ded67632692b0d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/44d5ea8ba9fd1472c2f660f94baea95c/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-fresco-1.10.0.aar/b7cc831f37384a06b8bb797d18f00f14/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/096a0d13d28704ef294f50ddec004175/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-drawee-1.10.0.aar/ac3f98e5b2bb44df8c5daeb12360e3fd/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-imagepipeline-1.10.0.aar/400c2fc29b163490074b1cfbabeddd21/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-imagepipeline-base-1.10.0.aar/0a63f371ca0881d4977fb39f46d73663/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/6953e9b519edc36ce675d4415834334a/AndroidManifest.xml:2:1-13:12
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:2:1-30:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-fbcore-1.10.0.aar/52edf5dece6906d9148090409e27fcd5/AndroidManifest.xml:2:1-9:12
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:1-48:12
+	package
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:2:5-22
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-67
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:5:22-75
+uses-permission#android.permission.MANAGE_DOCUMENTS
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:8:5-75
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:8:22-72
+uses-permission#android.permission.READ_INTERNAL_STORAGE
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:9:22-77
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:10:5-75
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:10:22-72
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:11:5-74
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:11:22-71
+uses-permission#android.permission.VIBRATE
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:12:22-63
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:13:22-77
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:16:5-81
+MERGED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-81
+MERGED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:12:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:16:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:17:5-79
+MERGED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-79
+MERGED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:14:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:17:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:18:5-65
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:18:22-62
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:19:5-72
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:19:22-69
+uses-permission#android.permission.READ_CALENDAR
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:20:5-72
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:20:22-69
+uses-permission#android.permission.WRITE_CALENDAR
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:21:5-73
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:21:22-70
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:22:5-80
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-80
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:22:22-77
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:23:5-71
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:23:22-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:24:5-81
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-81
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:24:22-78
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:25:5-73
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:25:22-70
+application
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:28:5-46:19
+MERGED from [com.facebook.react:react-native:0.59.10] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.59.10.aar/cbd41c1d6d4d6f01c200eac6bc1500e9/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.59.10] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.59.10.aar/cbd41c1d6d4d6f01c200eac6bc1500e9/AndroidManifest.xml:11:5-20
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:5-28:19
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:5-28:19
+MERGED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-19:19
+MERGED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-19:19
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/f3d74774cde92e92cfc1e43f2f9654f8/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/f3d74774cde92e92cfc1e43f2f9654f8/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/97d00999c30deeade6365c0f1c6e18d7/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/97d00999c30deeade6365c0f1c6e18d7/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/663b0f2f3bec116262637383e6f6f3bd/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/663b0f2f3bec116262637383e6f6f3bd/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/5f6660c227b978e84bde6e5183c8d282/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/5f6660c227b978e84bde6e5183c8d282/AndroidManifest.xml:22:5-26:19
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/4bd02ff77c3bd953c901855cdc71744b/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/4bd02ff77c3bd953c901855cdc71744b/AndroidManifest.xml:10:5-20
+MERGED from [androidx.core:core:1.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/5210f349cf43844c9c4610653626ce05/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/5210f349cf43844c9c4610653626ce05/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/b41173a5c5d9aa996aacd512f24f8776/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/b41173a5c5d9aa996aacd512f24f8776/AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/44d5ea8ba9fd1472c2f660f94baea95c/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/44d5ea8ba9fd1472c2f660f94baea95c/AndroidManifest.xml:9:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/6953e9b519edc36ce675d4415834334a/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/6953e9b519edc36ce675d4415834334a/AndroidManifest.xml:11:5-20
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:18:5-28:19
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:18:5-28:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/5210f349cf43844c9c4610653626ce05/AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:30:7-39
+	android:roundIcon
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:32:7-52
+	android:icon
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:31:7-41
+	android:allowBackup
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:33:7-34
+	android:theme
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:34:7-38
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:29:7-38
+activity#com.lol.MainActivity
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:35:7-44:18
+	android:label
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:37:9-41
+	android:windowSoftInputMode
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:39:9-51
+	android:configChanges
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:38:9-79
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:36:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:40:9-43:25
+action#android.intent.action.MAIN
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:41:13-65
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:41:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:42:13-73
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:42:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:45:7-84
+	android:name
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml:45:17-81
+uses-sdk
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-screens] /home/lucas/Dev/lol/LolFrontend/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-screens] /home/lucas/Dev/lol/LolFrontend/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /home/lucas/Dev/lol/LolFrontend/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /home/lucas/Dev/lol/LolFrontend/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /home/lucas/Dev/lol/LolFrontend/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /home/lucas/Dev/lol/LolFrontend/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.59.10] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.59.10.aar/cbd41c1d6d4d6f01c200eac6bc1500e9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.59.10] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.59.10.aar/cbd41c1d6d4d6f01c200eac6bc1500e9/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-permissions] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-permissions] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/37950f6cc4b19d6a724bde17acbe03bb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/37950f6cc4b19d6a724bde17acbe03bb/AndroidManifest.xml:20:5-44
+MERGED from [:unimodules-react-native-adapter] /home/lucas/Dev/lol/LolFrontend/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-react-native-adapter] /home/lucas/Dev/lol/LolFrontend/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-app-loader-provider] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-app-loader-provider] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-constants] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-constants/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-constants] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-constants/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:expo-font] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-font/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-font] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-font/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-keep-awake] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-keep-awake/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-keep-awake] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-keep-awake/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-linear-gradient] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-linear-gradient] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-sqlite] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-sqlite/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-sqlite] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-sqlite/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-web-browser] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-web-browser/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-web-browser] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-web-browser/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-barcode-scanner-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-barcode-scanner-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-barcode-scanner-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-barcode-scanner-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-camera-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-camera-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-camera-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-camera-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-constants-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-constants-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-constants-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-constants-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-face-detector-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-face-detector-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-face-detector-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-face-detector-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-file-system-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-file-system-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-file-system-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-file-system-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-font-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-font-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-font-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-font-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-permissions-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-permissions-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-permissions-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-permissions-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-task-manager-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-task-manager-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-task-manager-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-task-manager-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-core] /home/lucas/Dev/lol/LolFrontend/node_modules/@unimodules/core/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-core] /home/lucas/Dev/lol/LolFrontend/node_modules/@unimodules/core/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-image-loader-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-image-loader-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-sensors-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-sensors-interface] /home/lucas/Dev/lol/LolFrontend/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.transition:transition:1.1.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/transition-1.1.0.aar/2c626617b53abe75a3323caa3ade1497/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.1.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/transition-1.1.0.aar/2c626617b53abe75a3323caa3ade1497/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/68865fccd40925e9ada0b5a2817b41b8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/68865fccd40925e9ada0b5a2817b41b8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/f3d74774cde92e92cfc1e43f2f9654f8/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/f3d74774cde92e92cfc1e43f2f9654f8/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/97d00999c30deeade6365c0f1c6e18d7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/97d00999c30deeade6365c0f1c6e18d7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/663b0f2f3bec116262637383e6f6f3bd/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/663b0f2f3bec116262637383e6f6f3bd/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/5f6660c227b978e84bde6e5183c8d282/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/5f6660c227b978e84bde6e5183c8d282/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/a85ae2eebaa54bef134951e63c67e43a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/a85ae2eebaa54bef134951e63c67e43a/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/4bd02ff77c3bd953c901855cdc71744b/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/4bd02ff77c3bd953c901855cdc71744b/AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.fragment:fragment:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/8ee07570946b76b64a3504eb94fb5ee3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/8ee07570946b76b64a3504eb94fb5ee3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/51f398339a9a3ec1424fa992cd728fff/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/51f398339a9a3ec1424fa992cd728fff/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/e2b5e4b06f6f60c3dc43c1eec3aa5ac0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/e2b5e4b06f6f60c3dc43c1eec3aa5ac0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/eb237e792ef30dd023e5273f8d371964/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/eb237e792ef30dd023e5273f8d371964/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0.aar/4a4d1871895f689151921d846b816754/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0.aar/4a4d1871895f689151921d846b816754/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/aa3c3c46f463e4836cf9d2eee95aaf5a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/aa3c3c46f463e4836cf9d2eee95aaf5a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/127f8f3f4ec5379922d0fe80f15acbe0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/127f8f3f4ec5379922d0fe80f15acbe0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/3b6f91e6342b40443032860f12948edc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/3b6f91e6342b40443032860f12948edc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/129e1fab6ee431196375f2252dc4eeb2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/129e1fab6ee431196375f2252dc4eeb2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/b72c57ebe9a9c05822951921cb23f955/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/b72c57ebe9a9c05822951921cb23f955/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/9ed46e3fd495553feddde5e6d7d82160/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/9ed46e3fd495553feddde5e6d7d82160/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/8ae31b064f69c8e93e853753f65c0b09/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/8ae31b064f69c8e93e853753f65c0b09/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/9ac3dc5d8d6dc466d5fe7ba45e092434/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/9ac3dc5d8d6dc466d5fe7ba45e092434/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/ef1a1d8f64220c0a6b18361434571457/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/ef1a1d8f64220c0a6b18361434571457/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/5210f349cf43844c9c4610653626ce05/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/5210f349cf43844c9c4610653626ce05/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/b41173a5c5d9aa996aacd512f24f8776/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/b41173a5c5d9aa996aacd512f24f8776/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/8eb3852e945e0ceac50aa32fd3892f87/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/8eb3852e945e0ceac50aa32fd3892f87/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/62594978085688b0288b3691d5638c5c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/62594978085688b0288b3691d5638c5c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/c3b95d04c04ab49c7e142f7acac753ad/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/c3b95d04c04ab49c7e142f7acac753ad/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/290dd4b1c1666549d24c608dfcfbddeb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/290dd4b1c1666549d24c608dfcfbddeb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/4d1881344ead3d40902ba06123548264/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/4d1881344ead3d40902ba06123548264/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/a4c2826608e4819544da06a0b8c504ea/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/a4c2826608e4819544da06a0b8c504ea/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/74a3a972e9d56007596f4ab3950264cd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/74a3a972e9d56007596f4ab3950264cd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/4c653ebad2ef5ca2fe0e5a37f4e489d4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/4c653ebad2ef5ca2fe0e5a37f4e489d4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/f9ea34ed6227e25c03aa8b78409253ad/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/f9ea34ed6227e25c03aa8b78409253ad/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/016ba4c5c6cd9ded15ded67632692b0d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/016ba4c5c6cd9ded15ded67632692b0d/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/44d5ea8ba9fd1472c2f660f94baea95c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/44d5ea8ba9fd1472c2f660f94baea95c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-fresco-1.10.0.aar/b7cc831f37384a06b8bb797d18f00f14/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-fresco-1.10.0.aar/b7cc831f37384a06b8bb797d18f00f14/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/096a0d13d28704ef294f50ddec004175/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/096a0d13d28704ef294f50ddec004175/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-drawee-1.10.0.aar/ac3f98e5b2bb44df8c5daeb12360e3fd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-drawee-1.10.0.aar/ac3f98e5b2bb44df8c5daeb12360e3fd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-imagepipeline-1.10.0.aar/400c2fc29b163490074b1cfbabeddd21/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-imagepipeline-1.10.0.aar/400c2fc29b163490074b1cfbabeddd21/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-imagepipeline-base-1.10.0.aar/0a63f371ca0881d4977fb39f46d73663/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-imagepipeline-base-1.10.0.aar/0a63f371ca0881d4977fb39f46d73663/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/6953e9b519edc36ce675d4415834334a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/6953e9b519edc36ce675d4415834334a/AndroidManifest.xml:7:5-9:41
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:8:5-10:41
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:8:5-10:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-fbcore-1.10.0.aar/52edf5dece6906d9148090409e27fcd5/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-fbcore-1.10.0.aar/52edf5dece6906d9148090409e27fcd5/AndroidManifest.xml:5:5-7:41
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/lucas/Dev/lol/LolFrontend/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.STORAGE
+ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-66
+	android:name
+		ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:22-63
+provider#expo.modules.filesystem.FileSystemFileProvider
+ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:9-27:20
+	android:grantUriPermissions
+		ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:13-47
+	android:authorities
+		ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-74
+	android:exported
+		ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-37
+	tools:replace
+		ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-48
+	android:name
+		ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-74
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-26:70
+	android:resource
+		ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:17-67
+	android:name
+		ADDED from [:expo-file-system] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-74
+service#expo.modules.location.services.LocationTaskService
+ADDED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:40
+	android:exported
+		ADDED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from [:expo-location] /home/lucas/Dev/lol/LolFrontend/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-78
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/5f6660c227b978e84bde6e5183c8d282/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/5f6660c227b978e84bde6e5183c8d282/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/5f6660c227b978e84bde6e5183c8d282/AndroidManifest.xml:24:13-58
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:13:22-76
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:15:5-98
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:15:22-95
+uses-permission#com.google.android.gms.permission.ACTIVITY_RECOGNITION
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:16:5-94
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:16:22-91
+service#io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:20:13-132
+service#io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:23:13-127
+service#io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/c722fd1288c643c364d8ed4874d4e5d7/AndroidManifest.xml:26:13-120
