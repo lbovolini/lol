@@ -25,9 +25,16 @@ export default class Home extends React.Component {
             <Picker style = { styles.picker } selectedValue = { this.state.region }
                onValueChange = { this.updateRegion } >
                <Picker.Item label = 'Brasil' value = 'br'/>
-               <Picker.Item label = 'Korea' value = 'ko'/>
-               <Picker.Item label = 'Russia' value = 'ru'/>
+               <Picker.Item label = 'EUNE' value = 'eune'/>
+               <Picker.Item label = 'EUW' value = 'euw'/>
                <Picker.Item label = 'Japan' value = 'jp'/>
+               <Picker.Item label = 'Korea' value = 'kr'/>
+               <Picker.Item label = 'LAN' value = 'lan'/>
+               <Picker.Item label = 'LAS' value = 'las'/>
+               <Picker.Item label = 'North America' value = 'na'/>
+               <Picker.Item label = 'OCE' value = 'oce'/>
+               <Picker.Item label = 'TR' value = 'TR'/>
+               <Picker.Item label = 'RU' value = 'ru'/>
             </Picker>
             <Button onPress = { this.handleButtonPress }
                title = 'Pesquisar'
