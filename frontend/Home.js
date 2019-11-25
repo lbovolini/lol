@@ -6,7 +6,7 @@ import { Actions } from 'react-native-router-flux';
 export default class Home extends React.Component {
    state = {
       summoner: '',
-      region: 'br1',
+      region: 'br',
    }
    updateSummoner = (summoner) => {
       this.setState({ summoner: summoner })
@@ -24,17 +24,17 @@ export default class Home extends React.Component {
                onChangeText = { this.updateSummoner }/>
             <Picker style = { styles.picker } selectedValue = { this.state.region }
                onValueChange = { this.updateRegion } >
-               <Picker.Item label = 'Brasil' value = 'br'/>
-               <Picker.Item label = 'EUNE' value = 'eune'/>
-               <Picker.Item label = 'EUW' value = 'euw'/>
-               <Picker.Item label = 'Japan' value = 'jp'/>
-               <Picker.Item label = 'Korea' value = 'kr'/>
-               <Picker.Item label = 'LAN' value = 'lan'/>
-               <Picker.Item label = 'LAS' value = 'las'/>
-               <Picker.Item label = 'North America' value = 'na'/>
-               <Picker.Item label = 'OCE' value = 'oce'/>
+               <Picker.Item label = 'Brasil' value = 'BR'/>
+               <Picker.Item label = 'EUNE' value = 'EUNE'/>
+               <Picker.Item label = 'EUW' value = 'EUW'/>
+               <Picker.Item label = 'Japan' value = 'JP'/>
+               <Picker.Item label = 'Korea' value = 'KR'/>
+               <Picker.Item label = 'LAN' value = 'LAN'/>
+               <Picker.Item label = 'LAS' value = 'LAS'/>
+               <Picker.Item label = 'North America' value = 'NA'/>
+               <Picker.Item label = 'OCE' value = 'OCE'/>
                <Picker.Item label = 'TR' value = 'TR'/>
-               <Picker.Item label = 'RU' value = 'ru'/>
+               <Picker.Item label = 'RU' value = 'RU'/>
             </Picker>
             <Button onPress = { this.handleButtonPress }
                title = 'Pesquisar'

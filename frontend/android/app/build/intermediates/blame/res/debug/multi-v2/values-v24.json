@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/lucas/Dev/lol/LolFrontend/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/home/lucas/Dev/lol/frontend/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/home/lucas/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/127f8f3f4ec5379922d0fe80f15acbe0/res/values-v24/values-v24.xml",

@@ -20,7 +20,7 @@ class Summoner extends React.Component {
         this.state = {
             isLoading: true,
             dataSource: null,
-            api: 'http://192.168.0.105:8080',
+            api: 'http://192.168.0.105:8080/api/v1',
             dd: 'http://ddragon.leagueoflegends.com',
             version: null
         }
@@ -28,7 +28,7 @@ class Summoner extends React.Component {
 
 
     componentDidMount() {
-        let summoner = fetch(`${this.state.api}/summoner/${this.props.summoner}/${this.props.region}/details.json`)
+        let summoner = fetch(`${this.state.api}/${this.props.summoner}/${this.props.region}/all.json`)
         let realms = fetch(`${this.state.dd}/realms/br.json`)
 
         Promise.all([summoner, realms])
@@ -51,7 +51,9 @@ class Summoner extends React.Component {
             )
         }
         else {
-            const summoner = this.state.dataSource
+            const summoner = this.state.dataSource.summoner
+            const leagues = this.state.dataSource.leagues
+            const history = this.state.dataSource.history
             const version = this.state.version.n
             return (
                 <View style = { styles.container }>
@@ -61,6 +63,18 @@ class Summoner extends React.Component {
                     <Text>{ version.summoner }</Text>
                     <Image source = {{ uri: `${this.state.dd}/cdn/${version.profileicon}/img/profileicon/${summoner.profileIconId}.png` }}
                            style = { styles.profileIcon }/>
+
+                    {leagues.map(league => {
+                        if (league.queueType == 'RANKED_SOLO_5x5') {
+                            return <Text key={league.leagueId}>Ranqueada Solo</Text>
+                        }
+                    })}               
+             
+                    {history.map(match => {
+                        return (<Text key={match.gameId}>{match.gameMode}</Text>
+                    <Text>{match.gameDuration / 60}</Text>)
+                    })}
+                    
                 </View>
             );
         }

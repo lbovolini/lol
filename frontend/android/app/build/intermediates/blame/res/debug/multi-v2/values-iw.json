@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/lucas/Dev/lol/LolFrontend/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-iw/values-iw.xml",
+            "outputFile": "/home/lucas/Dev/lol/frontend/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-iw/values-iw.xml",
             "map": [
                 {
                     "source": "/home/lucas/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/b07bdaedddcf1244248f328274deb593/res/values-iw/values.xml",

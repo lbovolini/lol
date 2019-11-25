@@ -32,7 +32,7 @@ public class LolApplication {
 
 	@Bean
 	public ApiConfig apiConfig() {
-		return new ApiConfig().setKey("RGAPI-a17c9b26-5f7d-4aa6-a59c-4bed3a121426");
+		return new ApiConfig().setKey("RGAPI-41b5a83c-63a1-4d33-b636-2841fa8e4b58");
 	}
 
 	@Bean
