@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
-import { AppRegistry, View } from 'react-native';
-import Routes from './Routes.js'
+import { createAppContainer } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
 
-class reactTutorialApp extends Component {
-   render() {
-      return (
-         <Routes />
-      )
+import HomeScreen from './src/screens/HomeScreen'
+import SummonerScreen from './src/screens/SummonerScreen'
+
+const navigator = createStackNavigator(
+   {
+      Home: HomeScreen,
+      Summoner: SummonerScreen,
+   },
+   {
+      initialRouteName: 'Home',
+      defaultNavigationOptions: {
+         title: 'App'
+      }
    }
-}
-export default reactTutorialApp
-AppRegistry.registerComponent('reactTutorialApp', () => reactTutorialApp)
+)
+
+export default createAppContainer(navigator);

@@ -71,8 +71,7 @@ class Summoner extends React.Component {
                     })}               
              
                     {history.map(match => {
-                        return (<Text key={match.gameId}>{match.gameMode}</Text>
-                    <Text>{match.gameDuration / 60}</Text>)
+                        return (<Text key={match.gameId}>{match.gameMode}</Text>)
                     })}
                     
                 </View>
