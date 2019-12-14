@@ -3,12 +3,14 @@ import { View, Text, ActivityIndicator, Image, StyleSheet, FlatList } from 'reac
 
 import useResults from '../hooks/useResults'
 import League from '../components/League'
+import Match from '../components/Match'
+import Summoner from '../components/Summoner'
 
 const SummonerScreen = ({navigation}) => {
 
     const summonerName = navigation.getParam('summonerName', '')
     const region = navigation.getParam('region', '') 
-    const [searchApi, results, errorMessage] = useResults(summonerName, region)
+    const [searchApi, results, version, errorMessage] = useResults(summonerName, region)
 
     if (!results) {
         return <ActivityIndicator style={styles.indicator} size='large' color='#0000ff' />
@@ -17,24 +19,36 @@ const SummonerScreen = ({navigation}) => {
     const summoner = results.summoner
     const league = results.leagues.positionsSet
     const match = results.history.matchList
-
+    
     return (
-        <View>
-            <Text>{summoner.name}</Text>
+        <>
+            <View style={styles.container}>
+                <Summoner summoner={summoner} version={version} />
+                <FlatList
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    data={league}
+                    keyExtractor={(result) => result.leagueId}
+                    renderItem={({item}) => {
+                        return <League league={item} />
+                    }}
+                />
+            </View>
             <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                data={league}
-                keyExtractor={(result) => result.leagueId}
+                data={match}
+                keyExtractor={(m) => m.gameId}
                 renderItem={({item}) => {
-                    return <League league={item} />
+                    return <Match match={item} />
                 }}
             />
-        </View>
+        </>
     )
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row'
+    },
     indicator: {
         flex: 1,
         justifyContent: 'center'

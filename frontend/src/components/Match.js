@@ -1,13 +1,21 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 
-const Match = props => {
+const Match = ({match}) => {
     return(
-        <View>
-            <Text>{props.match.gameMode}</Text>
+        <View style={styles.container}>
+            <Text>{match.gameMode}</Text>
+            <Text>{match.gameCreation}</Text>
+            <Text>{match.gameDuration}</Text>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        margin: 10
+    }
+})
 
 export default Match
