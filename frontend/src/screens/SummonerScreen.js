@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View, Text, ActivityIndicator, Image, StyleSheet, FlatList } from 'react-native'
+import { View, Text, ActivityIndicator, ScrollView, StyleSheet, FlatList } from 'react-native'
 
 import useResults from '../hooks/useResults'
 import League from '../components/League'
@@ -22,6 +22,7 @@ const SummonerScreen = ({navigation}) => {
     
     return (
         <>
+        <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.container}>
                 <Summoner summoner={summoner} version={version} />
                 <FlatList
@@ -36,11 +37,13 @@ const SummonerScreen = ({navigation}) => {
             </View>
             <FlatList
                 data={match}
+                showsVerticalScrollIndicator={false}
                 keyExtractor={(m) => m.gameId}
                 renderItem={({item}) => {
                     return <Match match={item} />
                 }}
             />
+        </ScrollView>
         </>
     )
 }
