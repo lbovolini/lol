@@ -40,7 +40,7 @@ const SummonerScreen = ({navigation}) => {
                 showsVerticalScrollIndicator={false}
                 keyExtractor={(m) => m.gameId}
                 renderItem={({item}) => {
-                    return <Match match={item} />
+                    return <Match match={item} summonerId={summoner.id} version />
                 }}
             />
         </ScrollView>
