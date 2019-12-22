@@ -10,7 +10,7 @@ const SummonerScreen = ({navigation}) => {
 
     const summonerName = navigation.getParam('summonerName', '')
     const region = navigation.getParam('region', '') 
-    const [searchApi, results, version, champion, errorMessage] = useResults(summonerName, region)
+    const [searchApi, results, version, champion, summ, errorMessage] = useResults(summonerName, region)
 
     if (!results) {
         return <ActivityIndicator style={styles.indicator} size='large' color='#0000ff' />
@@ -40,7 +40,12 @@ const SummonerScreen = ({navigation}) => {
                 showsVerticalScrollIndicator={false}
                 keyExtractor={(m) => m.gameId}
                 renderItem={({item}) => {
-                    return <Match match={item} summonerId={summoner.id} version={version} champion={champion} />
+                    return <Match 
+                                match={item} 
+                                summonerId={summoner.id} 
+                                version={version} 
+                                champion={champion} 
+                                summ={summ} />
                 }}
             />
         </ScrollView>

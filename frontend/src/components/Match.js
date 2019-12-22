@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 import moment from 'moment'
 
-const Match = ({match, summonerId, version, champion}) => {
+const Match = ({match, summonerId, version, champion, summ}) => {
 
     const cdn = 'http://ddragon.leagueoflegends.com/cdn'
 
@@ -38,6 +38,15 @@ const Match = ({match, summonerId, version, champion}) => {
         } 
     }
 
+    const getSpellURI = (spellId) => {
+        for (var key of Object.keys(summ)) {
+            if (summ[key].key == spellId) {
+                console.log(`http://ddragon.leagueoflegends.com/cdn/${version.summoner}/img/spell/${key}.png`)
+                return `http://ddragon.leagueoflegends.com/cdn/${version.summoner}/img/spell/${key}.png`
+            }
+        } 
+    }
+
     return(
         <View style={[styles.container, win ? styles.win : styles.lose]}>
             <View>
@@ -52,9 +61,13 @@ const Match = ({match, summonerId, version, champion}) => {
                 <Text>Damage: {totalDamageDealtToChampions}</Text>
             </View>
             <View style={styles.icons}>
-                    <Image style={styles.champion} 
+                <Image style={styles.champion} 
                         source={{uri: championImg(participant.championId) }}/>
-                </View>
+                <Image style={styles.champion} 
+                        source={{uri: getSpellURI(participant.spell1Id) }}/>
+                <Image style={styles.champion} 
+                        source={{uri: getSpellURI(participant.spell2Id) }}/>
+            </View>
             <View style={styles.icons}>
                 <View style={styles.iconspart1}>
                     <Image style={styles.icon} 
@@ -83,14 +96,15 @@ const Match = ({match, summonerId, version, champion}) => {
 const styles = StyleSheet.create({
     container: {
         borderTopWidth: 1,
+        borderColor: '#FFFFFF',
         padding: 10,
         flexDirection: 'row'
     },
     win: {
-        backgroundColor: '#7ABF59'
+        backgroundColor: '#50d890'
     },
     lose: {
-        backgroundColor: '#DF4646'
+        backgroundColor: '#f6c3e5'
     },
     icon: {
         width: 35,
