@@ -10,7 +10,7 @@ const SummonerScreen = ({navigation}) => {
 
     const summonerName = navigation.getParam('summonerName', '')
     const region = navigation.getParam('region', '') 
-    const [searchApi, results, version, errorMessage] = useResults(summonerName, region)
+    const [searchApi, results, version, champion, errorMessage] = useResults(summonerName, region)
 
     if (!results) {
         return <ActivityIndicator style={styles.indicator} size='large' color='#0000ff' />
@@ -19,7 +19,7 @@ const SummonerScreen = ({navigation}) => {
     const summoner = results.summoner
     const league = results.leagues.positionsSet
     const match = results.history.matchList
-    
+
     return (
         <>
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -40,7 +40,7 @@ const SummonerScreen = ({navigation}) => {
                 showsVerticalScrollIndicator={false}
                 keyExtractor={(m) => m.gameId}
                 renderItem={({item}) => {
-                    return <Match match={item} summonerId={summoner.id} version />
+                    return <Match match={item} summonerId={summoner.id} version={version} champion={champion} />
                 }}
             />
         </ScrollView>
