@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
 import moment from 'moment'
 
-const Match = ({match, summonerId, version, champion, summ}) => {
+const Match = ({match, summonerId, version, champion, summ, rune}) => {
 
     const cdn = 'http://ddragon.leagueoflegends.com/cdn'
 
@@ -41,10 +41,17 @@ const Match = ({match, summonerId, version, champion, summ}) => {
     const getSpellURI = (spellId) => {
         for (var key of Object.keys(summ)) {
             if (summ[key].key == spellId) {
-                console.log(`http://ddragon.leagueoflegends.com/cdn/${version.summoner}/img/spell/${key}.png`)
                 return `http://ddragon.leagueoflegends.com/cdn/${version.summoner}/img/spell/${key}.png`
             }
         } 
+    }
+
+    const getRune = (runeId) => {
+        for(var key of Object.keys(rune)) {           
+            if (rune[key].id == runeId) {
+                return `https://ddragon.leagueoflegends.com/cdn/img/${rune[key].icon}`       
+            }
+        }
     }
 
     return(
@@ -63,9 +70,17 @@ const Match = ({match, summonerId, version, champion, summ}) => {
             <View style={styles.icons}>
                 <Image style={styles.champion} 
                         source={{uri: championImg(participant.championId) }}/>
-                <Image style={styles.champion} 
+                <View style={styles.runes}>
+                    <Image style={styles.icon} 
+                        source={{uri: getRune(participant.stats.perkPrimaryStyle) }}/>
+                    <Image style={styles.icon} 
+                        source={{uri: getRune(participant.stats.perkSubStyle) }}/>
+                </View>
+            </View>
+            <View style={styles.icons}>
+                <Image style={styles.icon} 
                         source={{uri: getSpellURI(participant.spell1Id) }}/>
-                <Image style={styles.champion} 
+                <Image style={styles.icon} 
                         source={{uri: getSpellURI(participant.spell2Id) }}/>
             </View>
             <View style={styles.icons}>
@@ -101,20 +116,21 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     win: {
-        backgroundColor: '#50d890'
+        backgroundColor: '#91bd3a'
     },
     lose: {
-        backgroundColor: '#f6c3e5'
+        backgroundColor: '#fa4252'
     },
     icon: {
         width: 35,
         height: 35,
         borderRadius: 7,
-        marginBottom: 5
+        marginBottom: 5,
+        backgroundColor: 'black',
+        marginRight: 10
     },
     icons: {
         justifyContent: 'center',
-        padding: 10
     },
     iconspart1: {
         flexDirection: 'row',
@@ -123,10 +139,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     champion: {
-        width: 48,
-        height: 48,
+        width: 80,
+        height: 80,
         borderRadius: 7,
         marginBottom: 5
+    },
+    runes: {
+        flexDirection: 'row'
     }
 })
 

@@ -7,6 +7,7 @@ export default (summonerName, region) => {
     const [version, setVersion] = useState(null)
     const [champion, setChampion] = useState(null)
     const [summoner, setSummoner] = useState(null)
+    const [rune, setRune] = useState(null)
     const [errorMessage, setErrorMessage] = useState('')
 
     const searchApi = async (summoner, region) => {
@@ -26,6 +27,8 @@ export default (summonerName, region) => {
             setChampion(champ.data.data)
             const summ = await ddragon.get(`/cdn/9.24.2/data/en_US/summoner.json`)
             setSummoner(summ.data.data)
+            const r = await ddragon.get(`/cdn/9.24.2/data/en_US/runesReforged.json`)
+            setRune(r.data)
         } catch (err) {
             setErrorMessage('Something went wrong')
         }
@@ -42,6 +45,7 @@ export default (summonerName, region) => {
         version,
         champion,
         summoner,
+        rune,
         errorMessage
     ]
 

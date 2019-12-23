@@ -10,7 +10,7 @@ const SummonerScreen = ({navigation}) => {
 
     const summonerName = navigation.getParam('summonerName', '')
     const region = navigation.getParam('region', '') 
-    const [searchApi, results, version, champion, summ, errorMessage] = useResults(summonerName, region)
+    const [searchApi, results, version, champion, summ, rune, errorMessage] = useResults(summonerName, region)
 
     if (!results) {
         return <ActivityIndicator style={styles.indicator} size='large' color='#0000ff' />
@@ -45,7 +45,8 @@ const SummonerScreen = ({navigation}) => {
                                 summonerId={summoner.id} 
                                 version={version} 
                                 champion={champion} 
-                                summ={summ} />
+                                summ={summ}
+                                rune={rune} />
                 }}
             />
         </ScrollView>
@@ -55,7 +56,7 @@ const SummonerScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     indicator: {
         flex: 1,
