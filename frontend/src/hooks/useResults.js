@@ -3,50 +3,50 @@ import lol from '../api/lol'
 import ddragon from '../api/ddragon'
 
 export default (summonerName, region) => {
-    const [results, setResults] = useState(null)
-    const [version, setVersion] = useState(null)
-    const [champion, setChampion] = useState(null)
-    const [summoner, setSummoner] = useState(null)
-    const [rune, setRune] = useState(null)
-    const [errorMessage, setErrorMessage] = useState('')
 
-    const searchApi = async (summoner, region) => {
-        try {
-            const response = await lol.get(`/${summoner}/${region}/all.json`)
-            setResults(response.data)
-        } catch (err) {
-            setErrorMessage('Something went wrong')
-        }
-    }
+    const [state, setState] = useState({
+                                version: '',
+                                language: '',
+                                region: '',
+                                summoner: null,
+                                champion: null,
+                                runes: null,
+                                spells: null,
+                                data: null,
+                                error: '',
+                            })
+        
 
-    const searchVersion = async (region) => {
+    const searchApi = async (summonerName, region) => {
         try {
-            const response = await ddragon.get(`/realms/${region.toLowerCase()}.json`)
-            setVersion(response.data.n)
-            const champ = await ddragon.get(`/cdn/9.24.2/data/en_US/champion.json`)
-            setChampion(champ.data.data)
-            const summ = await ddragon.get(`/cdn/9.24.2/data/en_US/summoner.json`)
-            setSummoner(summ.data.data)
-            const r = await ddragon.get(`/cdn/9.24.2/data/en_US/runesReforged.json`)
-            setRune(r.data)
+            const realm    = await ddragon.get(`/realms/${region.toLowerCase()}.json`)
+            const version  = realm.data.v
+            const language = realm.data.l
+            const summoner = await ddragon.get(`/cdn/${version}/data/${language}/summoner.json`)
+            const champion = await ddragon.get(`/cdn/${version}/data/${language}/champion.json`)
+            const runes    = await ddragon.get(`/cdn/${version}/data/${language}/runesReforged.json`)
+            const spells   = null
+            const data     = await lol.get(`/${summonerName}/${region}/all.json`)
+
+            setState({  version:  version,
+                        language: language,
+                        region:   region.toLowerCase(),
+                        summoner: summoner.data.data,
+                        champion: champion.data.data,
+                        runes:    runes.data,
+                        spells:   spells,
+                        data:     data.data       
+                    })
+
         } catch (err) {
-            setErrorMessage('Something went wrong')
+            setState({...state, error: 'Something went wrong'})
         }
     }
 
     useEffect(() => {
         searchApi(summonerName, region)
-        searchVersion(region)
     }, [])
 
-    return [
-        searchApi,
-        results,
-        version,
-        champion,
-        summoner,
-        rune,
-        errorMessage
-    ]
+    return state
 
 }

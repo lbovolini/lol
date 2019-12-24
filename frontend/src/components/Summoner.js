@@ -8,7 +8,7 @@ const Summoner = ({summoner, version}) => {
     return (
         <View style={styles.container}>
             <Image style={styles.image} 
-                source={{uri: `${cdn}/${version.profileicon}/img/profileicon/${summoner.profileIconId}.png` }}/>
+                source={{uri: `${cdn}/${version}/img/profileicon/${summoner.profileIconId}.png` }}/>
             <Text>{summoner.name}</Text>
             <Text>Level: {summoner.summonerLevel}</Text>
         </View>

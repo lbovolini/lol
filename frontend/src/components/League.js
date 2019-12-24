@@ -3,41 +3,46 @@ import { Text, View, StyleSheet, Image } from 'react-native'
 
 const League = ({league}) => {
 
-    let queue;
-    if (league.queueType === 'RANKED_SOLO_5x5') {
-        queue = 'Ranked Solo'
-    } else if (league.queueType === 'RANKED_FLEX_SR') {
-        queue = 'Ranked Flex'
+    const getQueueType = () => {
+        if (league.queueType === 'RANKED_SOLO_5x5') {
+            return 'Ranked Solo'
+        } else if (league.queueType === 'RANKED_FLEX_SR') {
+            return 'Ranked Flex'
+        }
+        return 'Ranked'
     }
-
+    
+    const queue = getQueueType()
+    const tierIconPath = '../../assets/ranked-emblems'
     const tier = league.tier
+
     switch (tier) {
         case 'IRON':
-            uri = require('../../assets/ranked-emblems/Emblem_Iron.png')
+            uri = require(`${tierIconPath}/Emblem_Iron.png`)
             break
         case 'BRONZE':
-            uri = require('../../assets/ranked-emblems/Emblem_Bronze.png')
+            uri = require(`${tierIconPath}/Emblem_Bronze.png`)
             break
         case 'SILVER':
-            uri = require('../../assets/ranked-emblems/Emblem_Silver.png')
+            uri = require(`${tierIconPath}/Emblem_Silver.png`)
             break
         case 'GOLD':
-            uri = require('../../assets/ranked-emblems/Emblem_Gold.png')
+            uri = require(`${tierIconPath}/Emblem_Gold.png`)
             break
         case 'PLATINUM':
-            uri = require('../../assets/ranked-emblems/Emblem_Platinum.png')
+            uri = require(`${tierIconPath}/Emblem_Platinum.png`)
             break
         case 'DIAMOND':
-            uri = require('../../assets/ranked-emblems/Emblem_Diamond.png')
+            uri = require(`${tierIconPath}/Emblem_Diamond.png`)
             break
         case 'MASTER':
-            uri = require('../../assets/ranked-emblems/Emblem_Master.png')
+            uri = require(`${tierIconPath}/Emblem_Master.png`)
             break
         case 'GRANDMASTER':
-            uri = require('../../assets/ranked-emblems/Emblem_Grandmaster.png')
+            uri = require(`${tierIconPath}/Emblem_Grandmaster.png`)
             break
         case 'CHALLENGER':
-            uri = require('../../assets/ranked-emblems/Emblem_Challenger.png')
+            uri = require(`${tierIconPath}/Emblem_Challenger.png`)
             break
     }
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View, Text, ActivityIndicator, ScrollView, StyleSheet, FlatList } from 'react-native'
+import { View, TouchableOpacity, ActivityIndicator, ScrollView, StyleSheet, FlatList } from 'react-native'
 
 import useResults from '../hooks/useResults'
 import League from '../components/League'
@@ -10,15 +10,16 @@ const SummonerScreen = ({navigation}) => {
 
     const summonerName = navigation.getParam('summonerName', '')
     const region = navigation.getParam('region', '') 
-    const [searchApi, results, version, champion, summ, rune, errorMessage] = useResults(summonerName, region)
+    const state = useResults(summonerName, region)
 
-    if (!results) {
+    if (!state.data) {
         return <ActivityIndicator style={styles.indicator} size='large' color='#0000ff' />
     }
 
-    const summoner = results.summoner
-    const league = results.leagues.positionsSet
-    const match = results.history.matchList
+    const summoner = state.data.summoner
+    const version  = state.version
+    const league   = state.data.leagues.positionsSet
+    const match    = state.data.history.matchList
 
     return (
         <>
@@ -40,13 +41,16 @@ const SummonerScreen = ({navigation}) => {
                 showsVerticalScrollIndicator={false}
                 keyExtractor={(m) => m.gameId}
                 renderItem={({item}) => {
-                    return <Match 
+                    return (
+                        <TouchableOpacity onPress={() => 
+                            navigation.navigate('MatchDetails')}>
+                            <Match 
                                 match={item} 
                                 summonerId={summoner.id} 
-                                version={version} 
-                                champion={champion} 
-                                summ={summ}
-                                rune={rune} />
+                                state={state}
+                            />
+                        </TouchableOpacity>
+                        )
                 }}
             />
         </ScrollView>
