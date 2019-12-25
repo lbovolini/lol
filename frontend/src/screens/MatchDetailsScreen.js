@@ -6,8 +6,9 @@ const MatchDetailsScreen = ({navigation}) => {
 
     const match = navigation.getParam('match', '')
     const state = navigation.getParam('state', '')
+    const index = navigation.getParam('index', '')
 
-    const data = state.data.history.matchList[0].participantIdentities
+    const data = state.data.history.matchList[index].participantIdentities
 
     return (
         <>

@@ -9,11 +9,19 @@ const MatchDetails = ({match, summonerId, state}) => {
     }
 
     const getParticipantId = (summonerId) => {
-        return match.participantIdentities
-            .filter((p) => p.player.summonerId === summonerId)[0].participantId
+        for(let i = 0; i < match.participantIdentities.length; i++) {
+            if (match.participantIdentities[i].player.summonerId == summonerId) {
+                return match.participantIdentities[i].participantId
+            }
+        }
     }
     
     const getParticipant = (participantId) => {
+        for(let i = 0; i < match.participants.length; i++) {
+            if (match.participants[i].participantId == participantId) {
+                return match.participants[i]
+            }
+        }
         return match.participants.filter((p) => p.participantId === participantId)[0]
     }
 

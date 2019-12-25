@@ -40,11 +40,11 @@ const SummonerScreen = ({navigation}) => {
                 data={match}
                 showsVerticalScrollIndicator={false}
                 keyExtractor={(m) => m.gameId}
-                renderItem={({item}) => {
+                renderItem={({item, index}) => {
                     return (
                         <TouchableOpacity onPress={() => 
                             navigation.navigate('MatchDetails', { 
-                                match: item, state: state
+                                match: item, index, state: state
                             })}>
                             <Match 
                                 match={item} 
