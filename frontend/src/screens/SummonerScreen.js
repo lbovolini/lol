@@ -43,7 +43,9 @@ const SummonerScreen = ({navigation}) => {
                 renderItem={({item}) => {
                     return (
                         <TouchableOpacity onPress={() => 
-                            navigation.navigate('MatchDetails')}>
+                            navigation.navigate('MatchDetails', { 
+                                match: item, state: state
+                            })}>
                             <Match 
                                 match={item} 
                                 summonerId={summoner.id} 
