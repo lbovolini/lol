@@ -73,9 +73,14 @@ const MatchDetails = ({match, summonerId, state}) => {
     }
 
     const getRune = (runeId) => {
-        for(var key of Object.keys(runes)) {           
-            if (runes[key].id == runeId) {
-                return `${cdn}/img/${runes[key].icon}`       
+
+        for (let i = 0; i < state.runes.length; i++) {
+            for (let j = 0; j < state.runes[i].slots.length; j++) {
+                for (let k = 0; k < state.runes[i].slots[j].runes.length; k++) {
+                    if (state.runes[i].slots[j].runes[k].id === runeId) {
+                        return `${cdn}/img/${state.runes[i].slots[j].runes[k].icon}`
+                    }
+                }
             }
         }
     }
@@ -115,6 +120,8 @@ const MatchDetails = ({match, summonerId, state}) => {
     const wardsPlaced = participant.stats.wardsPlaced
     
     const { item0, item1, item2, item3, item4, item5, item6 } = participant.stats
+    const { perk0, perk1, perk2, perk3, perk4, perk5 } = participant.stats
+    const { statPerk0, statPerk1, statPerk2 } = participant.stats
 
     return(
         <View style={[styles.container, win ? styles.win : styles.lose]}>
@@ -131,7 +138,6 @@ const MatchDetails = ({match, summonerId, state}) => {
                             source={{uri: getSpellURI(participant.spell2Id) }}/>
                 </View>
             </View>
-
             <View style={styles.icons}>
                 <Image style={styles.icon} 
                     source={{uri: `${cdn}/${version}/img/item/${item0}.png` }}/>
@@ -149,31 +155,44 @@ const MatchDetails = ({match, summonerId, state}) => {
                     source={{uri: `${cdn}/${version}/img/item/${item6}.png` }}/>
             </View>
             <View style={styles.details}>
-                    <View style={styles.headList}>
-                        <Text>Kills</Text>
-                        <Text>Deaths</Text>
-                        <Text>Assists</Text>
-                        <Text>KDA</Text>
-                        <Text>CS</Text>
-                        <Text>CS/min</Text>
-                        <Text>Damage</Text>
-                        <Text>Taken</Text>
-                        <Text>Gold</Text>
-                        <Text>Wards</Text>
-                    </View>
-                    <View style={styles.bodyList}>
-                        <Text>{kills}</Text>
-                        <Text>{deaths}</Text>
-                        <Text>{assists}</Text>
-                        <Text>{kda}</Text>
-                        <Text>{cs}</Text>
-                        <Text>{csmin}</Text>
-                        <Text>{totalDamageDealtToChampions}</Text>
-                        <Text>{totalDamageTaken}</Text>
-                        <Text>{goldEarned}</Text>
-                        <Text>{wardsPlaced}</Text>
-                    </View>
-               
+                <View style={styles.headList}>
+                    <Text>Kills</Text>
+                    <Text>Deaths</Text>
+                    <Text>Assists</Text>
+                    <Text>KDA</Text>
+                    <Text>CS</Text>
+                    <Text>CS/min</Text>
+                    <Text>Damage</Text>
+                    <Text>Taken</Text>
+                    <Text>Gold</Text>
+                    <Text>Wards</Text>
+                </View>
+                <View style={styles.bodyList}>
+                    <Text>{kills}</Text>
+                    <Text>{deaths}</Text>
+                    <Text>{assists}</Text>
+                    <Text>{kda}</Text>
+                    <Text>{cs}</Text>
+                    <Text>{csmin}</Text>
+                    <Text>{totalDamageDealtToChampions}</Text>
+                    <Text>{totalDamageTaken}</Text>
+                    <Text>{goldEarned}</Text>
+                    <Text>{wardsPlaced}</Text>
+                </View>
+            </View>
+            <View style={styles.runes}>
+                <Image style={styles.rune} 
+                    source={{uri: getRune(perk0) }}/>
+                <Image style={styles.rune} 
+                    source={{uri: getRune(perk1) }}/>
+                <Image style={styles.rune} 
+                    source={{uri: getRune(perk2) }}/>
+                <Image style={styles.rune} 
+                    source={{uri: getRune(perk3) }}/>
+                <Image style={styles.rune} 
+                    source={{uri: getRune(perk4) }}/>
+                <Image style={styles.rune} 
+                    source={{uri: getRune(perk5) }}/>
             </View>
         </View>
     )
@@ -221,9 +240,7 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
     runes: {
-        flexDirection: 'row',
-        marginHorizontal: 10,
-        marginBottom: 10
+        justifyContent: 'center',
     },
     spells: {
         flexDirection: 'row',
@@ -234,8 +251,9 @@ const styles = StyleSheet.create({
         width: 25,
         height: 25,
         borderRadius: 7,
+        marginBottom: 5,
         backgroundColor: 'black',
-        marginRight: 5
+        marginHorizontal: 20
     },
     spell: {
         width: 25,
@@ -251,7 +269,9 @@ const styles = StyleSheet.create({
         margin: 5
     },
     bodyList: {
-        margin: 5
+        width: 50,
+        margin: 5,
+        alignItems: 'flex-end'
     }
 })
 
