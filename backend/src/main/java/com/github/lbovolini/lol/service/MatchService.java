@@ -51,10 +51,6 @@ public class MatchService {
                     Match match = riotApi.getMatch(region, matchReference.getGameId());
                     MatchHistory matchHistory = Convert.dtoToMatchModel(match, accountId);
 
-                    if (matchHistory.getId() == 0) {
-                        System.out.println("ERRRRORRORR");
-                    }
-
                     matchHistoryList.add(matchHistory);
 
                     List<ParticipantIdentity> participantIdentityList = new ArrayList<>();
