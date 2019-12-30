@@ -61,7 +61,7 @@ public class MatchService {
                     matchHistory.setParticipants(participantList);
                     matchHistory.setParticipantIdentities(participantIdentityList);
 
-                    //matchRepository.save(matchHistory);
+                    matchRepository.saveAndFlush(matchHistory);
 
                     for (net.rithms.riot.api.endpoints.match.dto.ParticipantIdentity dto: match.getParticipantIdentities()) {
                         ParticipantIdentity participantIdentity = new ParticipantIdentity();
@@ -92,7 +92,7 @@ public class MatchService {
 
                 }
 
-                matchRepository.saveAll(matchHistoryList);
+                //matchRepository.saveAll(matchHistoryList);
 
          
             } catch (RiotApiException e) {
