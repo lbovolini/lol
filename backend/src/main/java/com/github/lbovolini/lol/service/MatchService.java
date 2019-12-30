@@ -50,9 +50,12 @@ public class MatchService {
                 for (MatchReference matchReference : matchReferenceList) {
                     Match match = riotApi.getMatch(region, matchReference.getGameId());
                     MatchHistory matchHistory = Convert.dtoToMatchModel(match, accountId);
+
+                    if (matchHistory.getId() == 0) {
+                        System.out.println("ERRRRORRORR");
+                    }
+
                     matchHistoryList.add(matchHistory);
-
-
 
                     List<ParticipantIdentity> participantIdentityList = new ArrayList<>();
                     List<Participant> participantList = new ArrayList<>();
@@ -61,12 +64,11 @@ public class MatchService {
                     matchHistory.setParticipants(participantList);
                     matchHistory.setParticipantIdentities(participantIdentityList);
 
-                    matchRepository.saveAndFlush(matchHistory);
+                    matchRepository.save(matchHistory);
 
                     for (net.rithms.riot.api.endpoints.match.dto.ParticipantIdentity dto: match.getParticipantIdentities()) {
                         ParticipantIdentity participantIdentity = new ParticipantIdentity();
                         participantIdentity.setParticipantId(dto.getParticipantId());
-                        //participantIdentity.setMatchHistory(matchHistory);
 
                         Summoner summoner = Convert.playerDtoToSummonerModel(dto.getPlayer());
                         participantIdentity.setSummoner(summoner);
@@ -85,15 +87,7 @@ public class MatchService {
                         participantRepository.save(participant);
                     }
 
-
-                    //participantRepository.saveAll(participantList);
-                    //participantIdentityRepository.saveAll(participantIdentityList);
-
-
                 }
-
-                //matchRepository.saveAll(matchHistoryList);
-
          
             } catch (RiotApiException e) {
                 e.printStackTrace();

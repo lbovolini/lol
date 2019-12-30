@@ -16,11 +16,9 @@ public class MatchHistory {
     private String gameType;
     private String gameVersion;
     private int mapId;
-    @OneToMany
-    @JoinColumn(name = "match_history_id")
+    @OneToMany(mappedBy = "pk.matchHistory")
     private List<ParticipantIdentity> participantIdentities = new ArrayList<>();
-    @OneToMany
-    @JoinColumn(name = "match_history_id")
+    @OneToMany(mappedBy = "pk.matchHistory")
     private List<Participant> participants = new ArrayList<>();
     private String platformId;
     private int queueId;
