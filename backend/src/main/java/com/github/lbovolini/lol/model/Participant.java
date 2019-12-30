@@ -7,20 +7,25 @@ import javax.persistence.*;
 @Entity
 public class Participant {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @JsonIgnore
+    private ParticipantId pk = new ParticipantId();
+
+    @EmbeddedId
+    public ParticipantId getPk() {
+        return pk;
+    }
+
+    public void setPk(ParticipantId pk) {
+        this.pk = pk;
+    }
+
     private int championId;
-    private int participantId;
+
     private int spell1Id;
     private int spell2Id;
     //private ParticipantStats stats;
     private int teamId;
 
-    @ManyToOne
-    @JoinColumn(name = "match_history_id")
-    @JsonIgnore
-    private MatchHistory matchHistory;
 
     private int assists;
     private int champLevel;
@@ -92,9 +97,23 @@ public class Participant {
     private int statPerk1;
     private int statPerk2;
 
+    @Transient
+    public int getParticipantId() {
+        return getPk().getParticipantId();
+    }
+
+    public void setParticipantId(int participantId) {
+        getPk().setParticipantId(participantId);
+    }
+
+    @Transient
+    @JsonIgnore
+    public MatchHistory getMatchHistory() {
+        return getPk().getMatchHistory();
+    }
 
     public void setMatchHistory(MatchHistory matchHistory) {
-        this.matchHistory = matchHistory;
+        getPk().setMatchHistory(matchHistory);
     }
 
     public int getChampionId() {
@@ -103,14 +122,6 @@ public class Participant {
 
     public void setChampionId(int championId) {
         this.championId = championId;
-    }
-
-    public int getParticipantId() {
-        return participantId;
-    }
-
-    public void setParticipantId(int participantId) {
-        this.participantId = participantId;
     }
 
     public int getSpell1Id() {
