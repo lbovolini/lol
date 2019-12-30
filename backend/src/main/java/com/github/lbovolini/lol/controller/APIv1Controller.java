@@ -36,9 +36,9 @@ public class APIv1Controller {
 
         Map response = new HashMap(3);
 
-        Summoner summoner = summonerService.findByNameAndPlatform(name, platform, true);
-        SummonerLeague summonerLeague = leagueService.findAllLeague(summoner.getId(), platform, true);
-        SummonerMatch summonerMatch = matchService.findMatchHistory(platform, summoner.getAccountId(), true);
+        Summoner summoner = summonerService.findByNameAndPlatform(name, platform, false);
+        SummonerLeague summonerLeague = leagueService.findAllLeague(summoner.getId(), platform, false);
+        SummonerMatch summonerMatch = matchService.findMatchHistory(platform, summoner.getAccountId(), false);
 
         response.put("summoner", summoner);
         response.put("leagues", summonerLeague);

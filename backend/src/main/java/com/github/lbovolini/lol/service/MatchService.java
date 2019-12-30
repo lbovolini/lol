@@ -79,7 +79,7 @@ public class MatchService {
 
                     for (net.rithms.riot.api.endpoints.match.dto.Participant dto : match.getParticipants()) {
                         Participant participant = Convert.dtoToParticipantModel(dto);
-                        //participant.setMatchHistory(matchHistory);
+                        participant.setMatchHistory(matchHistory);
 
                         participantList.add(participant);
                         participantRepository.save(participant);

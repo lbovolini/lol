@@ -39,7 +39,7 @@ const SummonerScreen = ({navigation}) => {
             <FlatList
                 data={match}
                 showsVerticalScrollIndicator={false}
-                keyExtractor={(m) => m.gameId}
+                keyExtractor={(m) => m.id}
                 renderItem={({item, index}) => {
                     return (
                         <TouchableOpacity onPress={() => 
