@@ -1,18 +1,16 @@
 package com.github.lbovolini.lol.model;
 
-import net.rithms.riot.api.endpoints.league.dto.LeagueEntry;
-
 import java.util.Set;
 
 public class SummonerLeague {
 
-    private Set<LeagueEntry> positionsSet;
+    private Set<League> positionsSet;
 
-    public Set<LeagueEntry> getPositionsSet() {
+    public Set<League> getPositionsSet() {
         return positionsSet;
     }
 
-    public void setPositionsSet(Set<LeagueEntry> positionsSet) {
+    public void setPositionsSet(Set<League> positionsSet) {
         this.positionsSet = positionsSet;
     }
 }

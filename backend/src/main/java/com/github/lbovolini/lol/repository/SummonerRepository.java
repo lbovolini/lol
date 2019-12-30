@@ -1,10 +1,10 @@
 package com.github.lbovolini.lol.repository;
 
-import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import com.github.lbovolini.lol.model.Summoner;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SummonerRepository extends MongoRepository<Summoner, String> {
-    Summoner findByNameIgnoreCase(String name);
+public interface SummonerRepository extends JpaRepository<Summoner, String> {
+    Summoner findByNameIgnoreCaseAndPlatform(String name, String platform);
 }

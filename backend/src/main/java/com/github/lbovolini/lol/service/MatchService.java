@@ -1,7 +1,11 @@
 package com.github.lbovolini.lol.service;
 
-import com.github.lbovolini.lol.model.SummonerMatch;
+import com.github.lbovolini.lol.model.*;
 import com.github.lbovolini.lol.repository.MatchRepository;
+import com.github.lbovolini.lol.repository.ParticipantIdentityRepository;
+import com.github.lbovolini.lol.repository.ParticipantRepository;
+import com.github.lbovolini.lol.repository.SummonerRepository;
+import com.github.lbovolini.lol.util.Convert;
 import com.github.lbovolini.lol.util.Region;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
@@ -23,30 +27,90 @@ public class MatchService {
     @Autowired
     MatchRepository matchRepository;
 
-    public SummonerMatch findMatchHistory(String platform, String accountId) {
+    @Autowired
+    ParticipantIdentityRepository participantIdentityRepository;
+
+    @Autowired
+    SummonerRepository summonerRepository;
+
+    @Autowired
+    ParticipantRepository participantRepository;
+
+    public SummonerMatch findMatchHistory(String platform, String accountId, boolean update) {
 
         Platform region = Region.get(platform);
 
-//        List<MatchHistoryModel> all = matchHistoryRepository.findAll();
-//
-//        if (!all.isEmpty()) {
-//            return all;
-//        }
-
-        List<Match> matchList = new ArrayList<>();
+        List<MatchHistory> matchHistoryList = new ArrayList<>();
         SummonerMatch summonerMatch = new SummonerMatch();
 
-        try {
-            List<MatchReference> matchReferenceList = riotApi.getMatchListByAccountId(region, accountId).getMatches().subList(0, 20);
+        if (update) {
+            try {
+                List<MatchReference> matchReferenceList = riotApi.getMatchListByAccountId(region, accountId).getMatches().subList(0, 20);
 
-            for (MatchReference matchReference: matchReferenceList) {
-                Match match = riotApi.getMatch(region, matchReference.getGameId());
-                matchList.add(match);
-                //matchHistoryRepository.save(matchHistoryModel);
+                for (MatchReference matchReference : matchReferenceList) {
+                    Match match = riotApi.getMatch(region, matchReference.getGameId());
+                    MatchHistory matchHistory = Convert.dtoToMatchModel(match, accountId);
+                    matchHistoryList.add(matchHistory);
+
+
+
+                    List<ParticipantIdentity> participantIdentityList = new ArrayList<>();
+                    List<Participant> participantList = new ArrayList<>();
+
+
+                    matchHistory.setParticipants(participantList);
+                    matchHistory.setParticipantIdentities(participantIdentityList);
+
+                    //matchRepository.save(matchHistory);
+
+                    for (net.rithms.riot.api.endpoints.match.dto.ParticipantIdentity dto: match.getParticipantIdentities()) {
+                        ParticipantIdentity participantIdentity = new ParticipantIdentity();
+                        participantIdentity.setParticipantId(dto.getParticipantId());
+                        //participantIdentity.setMatchHistory(matchHistory);
+
+                        Summoner summoner = Convert.playerDtoToSummonerModel(dto.getPlayer());
+                        participantIdentity.setSummoner(summoner);
+                        participantIdentity.setMatchHistory(matchHistory);
+                        summonerRepository.save(summoner);
+
+                        participantIdentityList.add(participantIdentity);
+                        participantIdentityRepository.save(participantIdentity);
+                    }
+
+                    for (net.rithms.riot.api.endpoints.match.dto.Participant dto : match.getParticipants()) {
+                        Participant participant = Convert.dtoToParticipantModel(dto);
+                        //participant.setMatchHistory(matchHistory);
+
+                        participantList.add(participant);
+                        participantRepository.save(participant);
+                    }
+
+
+                    //participantRepository.saveAll(participantList);
+                    //participantIdentityRepository.saveAll(participantIdentityList);
+
+
+                }
+
+                matchRepository.saveAll(matchHistoryList);
+
+         
+            } catch (RiotApiException e) {
+                e.printStackTrace();
             }
-        } catch (RiotApiException e) { e.printStackTrace(); }
+        } else {
 
-        summonerMatch.setMatchList(matchList);
+            matchHistoryList = matchRepository.findByAccountId(accountId);
+
+            System.out.println(matchHistoryList);
+
+/*            for (MatchHistory matchHistory : matchHistoryList) {
+                List<ParticipantIdentity> participantIdentityList = participantIdentityRepository.findByMatchHistoryId(matchHistory.getId(), matchHistory);
+                matchHistory.setParticipantIdentities(participantIdentityList);
+            }*/
+        }
+
+        summonerMatch.setMatchHistoryList(matchHistoryList);
 
         return summonerMatch;
     }

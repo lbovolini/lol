@@ -10,7 +10,7 @@ const MatchDetails = ({match, summonerId, state}) => {
 
     const getParticipantId = (summonerId) => {
         for(let i = 0; i < match.participantIdentities.length; i++) {
-            if (match.participantIdentities[i].player.summonerId == summonerId) {
+            if (match.participantIdentities[i].summoner.id == summonerId) {
                 return match.participantIdentities[i].participantId
             }
         }
@@ -26,26 +26,26 @@ const MatchDetails = ({match, summonerId, state}) => {
     }
 
     const getLevel = () => {
-        return participant.stats.champLevel
+        return participant.champLevel
     }
 
     const getKDA = () => {
-        if (participant.stats.deaths > 0) {
-            return ((participant.stats.assists + participant.stats.kills) / participant.stats.deaths).toFixed(2)
+        if (participant.deaths > 0) {
+            return ((participant.assists + participant.kills) / participant.deaths).toFixed(2)
         } 
-        return ((participant.stats.assists + participant.stats.kills) / 1).toFixed(2)
+        return ((participant.assists + participant.kills) / 1).toFixed(2)
     }
 
     const getGoldEarned = () => {
-        return participant.stats.goldEarned 
+        return participant.goldEarned 
     }
 
     const isWinner = () => {
-        return participant.stats.win
+        return participant.win
     }
 
     const getCreepScore = () => {
-        return participant.stats.totalMinionsKilled + participant.stats.neutralMinionsKilled
+        return participant.totalMinionsKilled + participant.neutralMinionsKilled
     }
 
     const getCreepScorePerMinute = () => {
@@ -53,7 +53,7 @@ const MatchDetails = ({match, summonerId, state}) => {
     }
 
     const getTotalDamageDealtToChampions = () => {
-        return participant.stats.totalDamageDealtToChampions
+        return participant.totalDamageDealtToChampions
     }
 
     const championImg = (championId) => {
@@ -87,8 +87,8 @@ const MatchDetails = ({match, summonerId, state}) => {
 
     const getSummonerName = (summonerId) => {
         for(let i = 0; i < match.participantIdentities.length; i++) {
-            if (match.participantIdentities[i].player.summonerId === summonerId) {
-                return match.participantIdentities[i].player.summonerName
+            if (match.participantIdentities[i].summoner.id === summonerId) {
+                return match.participantIdentities[i].summoner.name
             }
         }
     }
@@ -105,9 +105,9 @@ const MatchDetails = ({match, summonerId, state}) => {
     const participant = getParticipant(participantId)
     const summonerName = getSummonerName(summonerId)
 
-    const kills = participant.stats.kills
-    const assists = participant.stats.assists
-    const deaths = participant.stats.deaths
+    const kills = participant.kills
+    const assists = participant.assists
+    const deaths = participant.deaths
 
     const kda = getKDA()
     const level = getLevel()
@@ -116,12 +116,12 @@ const MatchDetails = ({match, summonerId, state}) => {
     const cs = getCreepScore()
     const csmin = getCreepScorePerMinute()
     const totalDamageDealtToChampions = getTotalDamageDealtToChampions()
-    const totalDamageTaken = participant.stats.totalDamageTaken
-    const wardsPlaced = participant.stats.wardsPlaced
+    const totalDamageTaken = participant.totalDamageTaken
+    const wardsPlaced = participant.wardsPlaced
     
-    const { item0, item1, item2, item3, item4, item5, item6 } = participant.stats
-    const { perk0, perk1, perk2, perk3, perk4, perk5 } = participant.stats
-    const { statPerk0, statPerk1, statPerk2 } = participant.stats
+    const { item0, item1, item2, item3, item4, item5, item6 } = participant
+    const { perk0, perk1, perk2, perk3, perk4, perk5 } = participant
+    const { statPerk0, statPerk1, statPerk2 } = participant
 
     return(
         <View style={[styles.container, win ? styles.win : styles.lose]}>

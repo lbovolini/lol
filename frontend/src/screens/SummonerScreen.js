@@ -19,7 +19,7 @@ const SummonerScreen = ({navigation}) => {
     const summoner = state.data.summoner
     const version  = state.version
     const league   = state.data.leagues.positionsSet
-    const match    = state.data.history.matchList
+    const match    = state.data.history.matchHistoryList
 
     return (
         <>

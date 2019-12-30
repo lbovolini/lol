@@ -1,12 +1,13 @@
 package com.github.lbovolini.lol.service;
 
+import com.github.lbovolini.lol.model.League;
 import com.github.lbovolini.lol.model.SummonerLeague;
 import com.github.lbovolini.lol.repository.LeagueRepository;
+import com.github.lbovolini.lol.util.Convert;
 import com.github.lbovolini.lol.util.Region;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.league.dto.LeagueEntry;
-import net.rithms.riot.api.endpoints.league.dto.LeaguePosition;
 import net.rithms.riot.constant.Platform;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,16 +24,29 @@ public class LeagueService {
     @Autowired
     LeagueRepository leagueRepository;
 
-    public SummonerLeague findAllLeague(String summonerId, String platform) {
+    public SummonerLeague findAllLeague(String summonerId, String platform, boolean update) {
 
         Platform region = Region.get(platform);
 
         SummonerLeague summonerLeague = new SummonerLeague();
 
-        try {
-            Set<LeagueEntry> positionsSet = riotApi.getLeagueEntriesBySummonerId(region, summonerId);
-            summonerLeague.setPositionsSet(positionsSet);
-        } catch (RiotApiException e) { e.printStackTrace(); }
+        Set<League> leagues = new HashSet<>();
+
+        if (update) {
+            try {
+                Set<LeagueEntry> dtos = riotApi.getLeagueEntriesBySummonerId(region, summonerId);
+                //summonerLeague.setPositionsSet(dto);
+                for (LeagueEntry dto : dtos) {
+                    leagues.add(Convert.dtoToLeagueModel(dto));
+                }
+                leagueRepository.saveAll(leagues);
+            } catch (RiotApiException e) {
+                e.printStackTrace();
+            }
+        } else {
+            leagues = leagueRepository.findBySummonerId(summonerId);
+        }
+        summonerLeague.setPositionsSet(leagues);
 
         return summonerLeague;
     }

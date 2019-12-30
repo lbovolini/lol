@@ -1,18 +1,16 @@
 package com.github.lbovolini.lol.model;
 
-import net.rithms.riot.api.endpoints.match.dto.Match;
-
 import java.util.List;
 
 public class SummonerMatch {
 
-    private List<Match> matchList;
+    private List<MatchHistory> matchHistoryList;
 
-    public List<Match> getMatchList() {
-        return matchList;
+    public List<MatchHistory> getMatchHistoryList() {
+        return matchHistoryList;
     }
 
-    public void setMatchList(List<Match> matchList) {
-        this.matchList = matchList;
+    public void setMatchHistoryList(List<MatchHistory> matchHistoryList) {
+        this.matchHistoryList = matchHistoryList;
     }
 }

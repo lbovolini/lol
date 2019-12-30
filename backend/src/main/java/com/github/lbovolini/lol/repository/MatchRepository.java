@@ -1,9 +1,10 @@
 package com.github.lbovolini.lol.repository;
 
-import net.rithms.riot.api.endpoints.match.dto.Match;
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
+import com.github.lbovolini.lol.model.MatchHistory;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface MatchRepository extends MongoRepository<Match, Long> {
+import java.util.List;
+
+public interface MatchRepository extends JpaRepository<MatchHistory, Long> {
+    List<MatchHistory> findByAccountId(String accountId);
 }

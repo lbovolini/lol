@@ -10,7 +10,7 @@ const Match = ({match, summonerId, state}) => {
 
     const getParticipantId = (summonerId) => {
         return match.participantIdentities
-            .filter((p) => p.player.summonerId === summonerId)[0].participantId
+            .filter((p) => p.summoner.id === summonerId)[0].participantId
     }
     
     const getParticipant = (participantId) => {
@@ -18,26 +18,26 @@ const Match = ({match, summonerId, state}) => {
     }
 
     const getLevel = () => {
-        return participant.stats.champLevel
+        return participant.champLevel
     }
 
     const getKDA = () => {
-        if (participant.stats.deaths > 0) {
-            return ((participant.stats.assists + participant.stats.kills) / participant.stats.deaths).toFixed(2)
+        if (participant.deaths > 0) {
+            return ((participant.assists + participant.kills) / participant.deaths).toFixed(2)
         } 
-        return ((participant.stats.assists + participant.stats.kills) / 1).toFixed(2)
+        return ((participant.assists + participant.kills) / 1).toFixed(2)
     }
 
     const getGoldEarned = () => {
-        return participant.stats.goldEarned 
+        return participant.goldEarned 
     }
 
     const isWinner = () => {
-        return participant.stats.win
+        return participant.win
     }
 
     const getCreepScore = () => {
-        return participant.stats.totalMinionsKilled + participant.stats.neutralMinionsKilled
+        return participant.totalMinionsKilled + participant.neutralMinionsKilled
     }
 
     const getCreepScorePerMinute = () => {
@@ -45,7 +45,7 @@ const Match = ({match, summonerId, state}) => {
     }
 
     const getTotalDamageDealtToChampions = () => {
-        return participant.stats.totalDamageDealtToChampions
+        return participant.totalDamageDealtToChampions
     }
 
     const championImg = (championId) => {
@@ -91,7 +91,7 @@ const Match = ({match, summonerId, state}) => {
     const csmin = getCreepScorePerMinute()
     const totalDamageDealtToChampions = getTotalDamageDealtToChampions()
     
-    const { item0, item1, item2, item3, item4, item5, item6 } = participant.stats
+    const { item0, item1, item2, item3, item4, item5, item6 } = participant
 
     return(
         <View style={[styles.container, win ? styles.win : styles.lose]}>
@@ -108,9 +108,9 @@ const Match = ({match, summonerId, state}) => {
                         source={{uri: championImg(participant.championId) }}/>
                 <View style={styles.runes}>
                     <Image style={styles.rune} 
-                        source={{uri: getRune(participant.stats.perkPrimaryStyle) }}/>
+                        source={{uri: getRune(participant.perkPrimaryStyle) }}/>
                     <Image style={styles.rune} 
-                        source={{uri: getRune(participant.stats.perkSubStyle) }}/>
+                        source={{uri: getRune(participant.perkSubStyle) }}/>
                 </View>
             </View>
             <View style={styles.icons}>

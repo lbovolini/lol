@@ -1,14 +1,11 @@
 package com.github.lbovolini.lol.controller;
 
+import com.github.lbovolini.lol.model.Summoner;
 import com.github.lbovolini.lol.model.SummonerLeague;
 import com.github.lbovolini.lol.model.SummonerMatch;
 import com.github.lbovolini.lol.service.LeagueService;
 import com.github.lbovolini.lol.service.MatchService;
 import com.github.lbovolini.lol.service.SummonerService;
-import net.rithms.riot.api.RiotApi;
-import net.rithms.riot.api.endpoints.league.dto.LeagueEntry;
-import net.rithms.riot.api.endpoints.match.dto.Match;
-import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 @CrossOrigin
 @RestController
@@ -29,8 +24,10 @@ public class APIv1Controller {
 
     @Autowired
     SummonerService summonerService;
+
     @Autowired
     LeagueService leagueService;
+
     @Autowired
     MatchService matchService;
 
@@ -39,9 +36,9 @@ public class APIv1Controller {
 
         Map response = new HashMap(3);
 
-        Summoner summoner = summonerService.findByNameAndPlatform(name, platform);
-        SummonerLeague summonerLeague = leagueService.findAllLeague(summoner.getId(), platform);
-        SummonerMatch summonerMatch = matchService.findMatchHistory(platform, summoner.getAccountId());
+        Summoner summoner = summonerService.findByNameAndPlatform(name, platform, true);
+        SummonerLeague summonerLeague = leagueService.findAllLeague(summoner.getId(), platform, true);
+        SummonerMatch summonerMatch = matchService.findMatchHistory(platform, summoner.getAccountId(), true);
 
         response.put("summoner", summoner);
         response.put("leagues", summonerLeague);

@@ -1,16 +1,11 @@
 package com.github.lbovolini.lol;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
-import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
-import net.rithms.riot.constant.Platform;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.core.MongoTemplate;
 
 @Configuration
 @SpringBootApplication
@@ -21,18 +16,8 @@ public class LolApplication {
 	}
 
 	@Bean
-	public MongoClient mongoClient() {
-		return MongoClients.create("mongodb://localhost:27017");
-	}
-
-	@Bean
-	public MongoTemplate mongoTemplate() {
-		return new MongoTemplate(mongoClient(), "lol");
-	}
-
-	@Bean
 	public ApiConfig apiConfig() {
-		return new ApiConfig().setKey("RGAPI-8575f53c-1595-49f0-91f3-b76d13ead231");
+		return new ApiConfig().setKey("RGAPI-557c4417-863d-4809-b46c-a96167001749");
 	}
 
 	@Bean

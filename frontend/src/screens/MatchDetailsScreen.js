@@ -8,7 +8,7 @@ const MatchDetailsScreen = ({navigation}) => {
     const state = navigation.getParam('state', '')
     const index = navigation.getParam('index', '')
 
-    const data = state.data.history.matchList[index].participantIdentities
+    const data = state.data.history.matchHistoryList[index].participantIdentities
 
     return (
         <>
@@ -20,7 +20,7 @@ const MatchDetailsScreen = ({navigation}) => {
                     return (
                         <MatchDetails 
                             match={match} 
-                            summonerId={item.player.summonerId} 
+                            summonerId={item.summoner.id} 
                             state={state}
                         />
                     )
