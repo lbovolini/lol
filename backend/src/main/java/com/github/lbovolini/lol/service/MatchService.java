@@ -69,7 +69,10 @@ public class MatchService {
                         Summoner summoner = Convert.playerDtoToSummonerModel(dto.getPlayer());
                         participantIdentity.setSummoner(summoner);
                         participantIdentity.setMatchHistory(matchHistory);
-                        summonerRepository.save(summoner);
+
+                        if (!summonerRepository.existsById(summoner.getId())) {
+                            summonerRepository.save(summoner);
+                        }
 
                         participantIdentityList.add(participantIdentity);
                         participantIdentityRepository.save(participantIdentity);
@@ -90,7 +93,7 @@ public class MatchService {
             }
         } else {
 
-            matchHistoryList = matchRepository.findByAccountId(accountId);
+            matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId);
 
             System.out.println(matchHistoryList);
 

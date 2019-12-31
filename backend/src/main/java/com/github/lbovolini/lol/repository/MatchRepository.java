@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface MatchRepository extends JpaRepository<MatchHistory, String> {
-    List<MatchHistory> findByAccountId(String accountId);
+    List<MatchHistory> findByAccountIdOrderByGameCreationDesc(String accountId);
 }
