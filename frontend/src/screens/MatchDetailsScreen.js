@@ -13,7 +13,7 @@ const MatchDetailsScreen = ({navigation}) => {
     return (
         <>
             <FlatList
-                data={data}
+                data={data.sort((a, b) => a.participantId - b.participantId)}
                 showsVerticalScrollIndicator={false}
                 keyExtractor={(p) => p.participantId}
                 renderItem={({item}) => {
