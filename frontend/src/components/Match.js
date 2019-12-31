@@ -5,7 +5,14 @@ import moment from 'moment'
 const Match = ({match, summonerId, state}) => {
 
     const getMatchCreatedData = () => {
-        return new Date(match.gameCreation).toDateString()
+        return new Date(match.gameCreation).toLocaleDateString()
+    }
+
+    const getDuration = () => {
+        const min = Math.floor(match.gameDuration / 60)
+        const sec = match.gameDuration % 60
+
+        return `${min} min ${sec} sec`
     }
 
     const getParticipantId = (summonerId) => {
@@ -80,6 +87,7 @@ const Match = ({match, summonerId, state}) => {
     const runes    = state.runes 
 
     const created = getMatchCreatedData()
+    const duration = getDuration()
     const participantId = getParticipantId(summonerId)
     const participant = getParticipant(participantId)
 
@@ -98,7 +106,7 @@ const Match = ({match, summonerId, state}) => {
             <View style={styles.info}>
                 <Text>{match.gameMode}</Text>
                 <Text>{created}</Text>
-                <Text>Duration: {(match.gameDuration / 60).toFixed(2)}</Text>
+                <Text>{duration}</Text>
                 <Text>KDA: {kda}</Text>
                 <Text>CS/min: {csmin}</Text>
                 <Text>Damage: {totalDamageDealtToChampions}</Text>
