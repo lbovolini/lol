@@ -9,10 +9,7 @@ import com.github.lbovolini.lol.service.SummonerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,11 +29,13 @@ public class APIv1Controller {
     MatchService matchService;
 
     @RequestMapping("/{name}/{platform}/all.json")
-    public ResponseEntity getAllInfo(@PathVariable String name, @PathVariable String platform) {
+    public ResponseEntity getAllInfo(@PathVariable String name, @PathVariable String platform, @RequestParam boolean update) {
 
         Map response = new HashMap(3);
 
-        boolean update = true;
+        //boolean update = false;
+
+        System.out.println(update);
 
         Summoner summoner = summonerService.findByNameAndPlatform(name, platform, update);
         SummonerLeague summonerLeague = leagueService.findAllLeague(summoner.getId(), platform, update);

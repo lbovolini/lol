@@ -25,25 +25,30 @@ public class SummonerService {
 
         Platform region = Region.get(platform);
 
-        net.rithms.riot.api.endpoints.summoner.dto.Summoner dto = null;
-        Summoner summoner = null;
+        Summoner summoner = summonerRepository.findByNameIgnoreCaseAndPlatform(name, platform);
 
-        if (update) {
-            try {
-                dto = riotApi.getSummonerByName(region, name);
-            } catch (RiotApiException e) {
-                e.printStackTrace();
-            }
-            summoner = Convert.dtoToSummonerModel(dto);
-            summoner.setPlatform(platform);
-            summonerRepository.save(summoner);
-        } else {
-            summoner = summonerRepository.findByNameIgnoreCaseAndPlatform(name, platform);
+        if (summoner == null || update) {
+            summoner = update(name, region, platform);
         }
+
         return summoner;
      }
 
 
+    private Summoner update(String name, Platform region, String platform) {
 
+        net.rithms.riot.api.endpoints.summoner.dto.Summoner dto = null;
+
+        try {
+            dto = riotApi.getSummonerByName(region, name);
+        } catch (RiotApiException e) {
+            e.printStackTrace();
+        }
+        Summoner summoner = Convert.dtoToSummonerModel(dto);
+        summoner.setPlatform(platform);
+        summonerRepository.save(summoner);
+
+        return summoner;
+    }
 
 }

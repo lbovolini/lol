@@ -17,7 +17,7 @@ export default (summonerName, region) => {
                             })
         
 
-    const searchApi = async (summonerName, region) => {
+    const searchApi = async (summonerName, region, update) => {
         try {
             const realm    = await ddragon.get(`/realms/${region.toLowerCase()}.json`)
             const version  = realm.data.v
@@ -26,7 +26,7 @@ export default (summonerName, region) => {
             const champion = await ddragon.get(`/cdn/${version}/data/${language}/champion.json`)
             const runes    = await ddragon.get(`/cdn/${version}/data/${language}/runesReforged.json`)
             const spells   = null
-            const data     = await lol.get(`/${summonerName}/${region}/all.json`)
+            const data     = await lol.get(`/${summonerName}/${region}/all.json?update=${update}`)
 
             setState({  version:  version,
                         language: language,
@@ -44,9 +44,9 @@ export default (summonerName, region) => {
     }
 
     useEffect(() => {
-        searchApi(summonerName, region)
+        searchApi(summonerName, region, false)
     }, [])
 
-    return state
+    return { state, searchApi }
 
 }

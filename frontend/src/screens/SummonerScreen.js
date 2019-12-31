@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View, TouchableOpacity, ActivityIndicator, ScrollView, StyleSheet, FlatList } from 'react-native'
+import { View, TouchableOpacity, ActivityIndicator, ScrollView, StyleSheet, FlatList, Button } from 'react-native'
 
 import useResults from '../hooks/useResults'
 import League from '../components/League'
@@ -10,7 +10,7 @@ const SummonerScreen = ({navigation}) => {
 
     const summonerName = navigation.getParam('summonerName', '')
     const region = navigation.getParam('region', '') 
-    const state = useResults(summonerName, region)
+    const { state, searchApi } = useResults(summonerName, region)
 
     if (!state.data) {
         return <ActivityIndicator style={styles.indicator} size='large' color='#0000ff' />
@@ -35,6 +35,9 @@ const SummonerScreen = ({navigation}) => {
                         return <League league={item} />
                     }}
                 />
+            </View>
+            <View>
+                <Button title="Update" onPress={() => searchApi(summonerName, region, true)}/>
             </View>
             <FlatList
                 data={match}

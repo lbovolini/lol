@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
-import moment from 'moment'
 
 const Match = ({match, summonerId, state}) => {
 
