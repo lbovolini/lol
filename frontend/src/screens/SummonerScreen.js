@@ -29,7 +29,7 @@ const SummonerScreen = ({navigation}) => {
                 <FlatList
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    data={league}
+                    data={league.sort((a, b) => b.queueType.localeCompare(a.queueType))}
                     keyExtractor={(result) => result.leagueId}
                     renderItem={({item}) => {
                         return <League league={item} />
