@@ -39,73 +39,70 @@ public class MatchService {
     public SummonerMatch findMatchHistory(String platform, String accountId, boolean update) {
 
         Platform region = Region.get(platform);
-
-        List<MatchHistory> matchHistoryList = new ArrayList<>();
         SummonerMatch summonerMatch = new SummonerMatch();
 
         if (update) {
-            try {
-                List<MatchReference> matchReferenceList = riotApi.getMatchListByAccountId(region, accountId).getMatches().subList(0, 20);
-
-                for (MatchReference matchReference : matchReferenceList) {
-                    Match match = riotApi.getMatch(region, matchReference.getGameId());
-                    MatchHistory matchHistory = Convert.dtoToMatchModel(match, accountId);
-
-                    matchHistoryList.add(matchHistory);
-
-                    List<ParticipantIdentity> participantIdentityList = new ArrayList<>();
-                    List<Participant> participantList = new ArrayList<>();
-
-
-                    matchHistory.setParticipants(participantList);
-                    matchHistory.setParticipantIdentities(participantIdentityList);
-
-                    matchRepository.save(matchHistory);
-
-                    for (net.rithms.riot.api.endpoints.match.dto.ParticipantIdentity dto: match.getParticipantIdentities()) {
-                        ParticipantIdentity participantIdentity = new ParticipantIdentity();
-                        participantIdentity.setParticipantId(dto.getParticipantId());
-
-                        Summoner summoner = Convert.playerDtoToSummonerModel(dto.getPlayer());
-                        participantIdentity.setSummoner(summoner);
-                        participantIdentity.setMatchHistory(matchHistory);
-
-                        if (!summonerRepository.existsById(summoner.getId())) {
-                            summonerRepository.save(summoner);
-                        }
-
-                        participantIdentityList.add(participantIdentity);
-                        participantIdentityRepository.save(participantIdentity);
-                    }
-
-                    for (net.rithms.riot.api.endpoints.match.dto.Participant dto : match.getParticipants()) {
-                        Participant participant = Convert.dtoToParticipantModel(dto);
-                        participant.setMatchHistory(matchHistory);
-
-                        participantList.add(participant);
-                        participantRepository.save(participant);
-                    }
-
-                }
-         
-            } catch (RiotApiException e) {
-                e.printStackTrace();
-            }
-        } else {
-
-            matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId);
-
-            System.out.println(matchHistoryList);
-
-/*            for (MatchHistory matchHistory : matchHistoryList) {
-                List<ParticipantIdentity> participantIdentityList = participantIdentityRepository.findByMatchHistoryId(matchHistory.getId(), matchHistory);
-                matchHistory.setParticipantIdentities(participantIdentityList);
-            }*/
+            updateMatchHistory(region, accountId);
         }
 
+        List<MatchHistory> matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId);
         summonerMatch.setMatchHistoryList(matchHistoryList);
 
         return summonerMatch;
+    }
+
+    private void saveParticipant(Match match, MatchHistory matchHistory) {
+
+        List<Participant> participantList = new ArrayList<>();
+
+        for (net.rithms.riot.api.endpoints.match.dto.Participant dto : match.getParticipants()) {
+            Participant participant = Convert.dtoToParticipantModel(dto);
+            participant.setMatchHistory(matchHistory);
+            participantList.add(participant);
+        }
+
+        participantRepository.saveAll(participantList);
+    }
+
+    private void saveParticipantIdentity(Match match, MatchHistory matchHistory) {
+
+        List<ParticipantIdentity> participantIdentityList = new ArrayList<>();
+
+        for (net.rithms.riot.api.endpoints.match.dto.ParticipantIdentity dto: match.getParticipantIdentities()) {
+            ParticipantIdentity participantIdentity = new ParticipantIdentity();
+            participantIdentity.setParticipantId(dto.getParticipantId());
+
+            Summoner summoner = Convert.playerDtoToSummonerModel(dto.getPlayer());
+            participantIdentity.setSummoner(summoner);
+            participantIdentity.setMatchHistory(matchHistory);
+
+            String id = summoner.getId();
+            if (!summonerRepository.existsById(id)) {
+                summonerRepository.save(summoner);
+            }
+
+            participantIdentityList.add(participantIdentity);
+        }
+
+        participantIdentityRepository.saveAll(participantIdentityList);
+    }
+
+    private void updateMatchHistory(Platform region, String accountId) {
+        try {
+            List<MatchReference> matchReferenceList = riotApi.getMatchListByAccountId(region, accountId).getMatches().subList(0, 20);
+
+            for (MatchReference matchReference : matchReferenceList) {
+                Match match = riotApi.getMatch(region, matchReference.getGameId());
+                MatchHistory matchHistory = Convert.dtoToMatchModel(match, accountId);
+
+                matchRepository.save(matchHistory);
+
+                saveParticipantIdentity(match, matchHistory);
+                saveParticipant(match, matchHistory);
+            }
+        } catch (RiotApiException e) {
+            e.printStackTrace();
+        }
     }
 
 }

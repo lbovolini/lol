@@ -28,26 +28,28 @@ public class LeagueService {
 
         Platform region = Region.get(platform);
 
-        SummonerLeague summonerLeague = new SummonerLeague();
-
-        Set<League> leagues = new HashSet<>();
-
         if (update) {
-            try {
-                Set<LeagueEntry> dtos = riotApi.getLeagueEntriesBySummonerId(region, summonerId);
-                //summonerLeague.setPositionsSet(dto);
-                for (LeagueEntry dto : dtos) {
-                    leagues.add(Convert.dtoToLeagueModel(dto));
-                }
-                leagueRepository.saveAll(leagues);
-            } catch (RiotApiException e) {
-                e.printStackTrace();
-            }
-        } else {
-            leagues = leagueRepository.findBySummonerId(summonerId);
+            update(region, summonerId);
         }
+
+        Set<League> leagues = leagueRepository.findBySummonerId(summonerId);
+        SummonerLeague summonerLeague = new SummonerLeague();
         summonerLeague.setPositionsSet(leagues);
 
         return summonerLeague;
+    }
+
+    private void update(Platform region, String summonerId) {
+        try {
+            Set<League> leagues = new HashSet<>();
+            Set<LeagueEntry> dtos = riotApi.getLeagueEntriesBySummonerId(region, summonerId);
+
+            for (LeagueEntry dto : dtos) {
+                leagues.add(Convert.dtoToLeagueModel(dto));
+            }
+            leagueRepository.saveAll(leagues);
+        } catch (RiotApiException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -25,17 +25,15 @@ public class SummonerService {
 
         Platform region = Region.get(platform);
 
-        Summoner summoner = summonerRepository.findByNameAndPlatform(name, platform);
-
-        if (summoner == null || update) {
-            summoner = update(name, region, platform);
+        if (update) {
+            update(name, region, platform);
         }
 
-        return summoner;
+        return summonerRepository.findByNameAndPlatform(name, platform);
      }
 
 
-    private Summoner update(String name, Platform region, String platform) {
+    private void update(String name, Platform region, String platform) {
 
         net.rithms.riot.api.endpoints.summoner.dto.Summoner dto = null;
 
@@ -47,8 +45,6 @@ public class SummonerService {
         Summoner summoner = Convert.dtoToSummonerModel(dto);
         summoner.setPlatform(platform);
         summonerRepository.save(summoner);
-
-        return summoner;
     }
 
 }
