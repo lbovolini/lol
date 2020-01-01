@@ -30,7 +30,7 @@ const SummonerScreen = ({navigation}) => {
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     data={league.sort((a, b) => b.queueType.localeCompare(a.queueType))}
-                    keyExtractor={(result) => result.leagueId}
+                    keyExtractor={(result) => result.id}
                     renderItem={({item}) => {
                         return <League league={item} />
                     }}
