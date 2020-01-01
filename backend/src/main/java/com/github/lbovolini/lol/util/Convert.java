@@ -73,7 +73,7 @@ public class Convert {
         summoner.setName(dto.getSummonerName());
         summoner.setProfileIconId(dto.getProfileIcon());
         summoner.setAccountId(dto.getAccountId());
-        summoner.setPlatform(dto.getCurrentPlatformId().substring(0, 2));
+        summoner.setPlatform(dto.getCurrentPlatformId().replace("1", ""));
 
         return summoner;
     }
