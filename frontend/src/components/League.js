@@ -62,10 +62,13 @@ const League = ({league}) => {
 const styles = StyleSheet.create({
     container: {
         margin: 10,
+        marginLeft: 0,
         height: 160,
         width: 200,
         backgroundColor: '#F6F6F6',
         alignItems: 'center',
+        height: 180,
+        paddingTop: 10
     },
     image: {
         width: 64,
