@@ -25,7 +25,7 @@ public class SummonerService {
 
         Platform region = Region.get(platform);
 
-        Summoner summoner = summonerRepository.findByNameIgnoreCaseAndPlatform(name, platform);
+        Summoner summoner = summonerRepository.findByNameAndPlatform(name, platform);
 
         if (summoner == null || update) {
             summoner = update(name, region, platform);
