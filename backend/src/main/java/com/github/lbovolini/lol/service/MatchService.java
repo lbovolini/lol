@@ -41,17 +41,18 @@ public class MatchService {
         Platform region = Region.get(platform);
         SummonerMatch summonerMatch = new SummonerMatch();
 
+        List<MatchHistory> matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId);
+
         if (update) {
-            updateMatchHistory(region, accountId);
+            matchHistoryList = updateMatchHistory(region, accountId);
         }
 
-        List<MatchHistory> matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId);
         summonerMatch.setMatchHistoryList(matchHistoryList);
 
         return summonerMatch;
     }
 
-    private void saveParticipant(Match match, MatchHistory matchHistory) {
+    private List<Participant> saveParticipant(Match match, MatchHistory matchHistory) {
 
         List<Participant> participantList = new ArrayList<>();
 
@@ -62,9 +63,10 @@ public class MatchService {
         }
 
         participantRepository.saveAll(participantList);
+        return participantList;
     }
 
-    private void saveParticipantIdentity(Match match, MatchHistory matchHistory) {
+    private List<ParticipantIdentity>  saveParticipantIdentity(Match match, MatchHistory matchHistory) {
 
         List<ParticipantIdentity> participantIdentityList = new ArrayList<>();
 
@@ -78,31 +80,38 @@ public class MatchService {
 
             String id = summoner.getId();
             if (!summonerRepository.existsById(id)) {
-                summonerRepository.save(summoner);
+                summonerRepository.saveAndFlush(summoner);
             }
 
             participantIdentityList.add(participantIdentity);
         }
 
         participantIdentityRepository.saveAll(participantIdentityList);
+        return participantIdentityList;
     }
 
-    private void updateMatchHistory(Platform region, String accountId) {
+    private List<MatchHistory> updateMatchHistory(Platform region, String accountId) {
+
+        List<MatchHistory> matchHistoryList = new ArrayList<>();
+
         try {
             List<MatchReference> matchReferenceList = riotApi.getMatchListByAccountId(region, accountId).getMatches().subList(0, 20);
 
             for (MatchReference matchReference : matchReferenceList) {
                 Match match = riotApi.getMatch(region, matchReference.getGameId());
-                MatchHistory matchHistory = Convert.dtoToMatchModel(match, accountId);
+                MatchHistory matchHistory  = Convert.dtoToMatchModel(match, accountId);
 
                 matchRepository.save(matchHistory);
 
-                saveParticipantIdentity(match, matchHistory);
-                saveParticipant(match, matchHistory);
+                matchHistory.setParticipantIdentities(saveParticipantIdentity(match, matchHistory));
+                matchHistory.setParticipants(saveParticipant(match, matchHistory));
+                matchHistoryList.add(matchHistory);
             }
         } catch (RiotApiException e) {
             e.printStackTrace();
         }
+
+        return matchHistoryList;
     }
 
 }

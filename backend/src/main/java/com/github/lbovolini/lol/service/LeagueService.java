@@ -31,7 +31,6 @@ public class LeagueService {
         if (update) {
             update(region, summonerId);
         }
-
         Set<League> leagues = leagueRepository.findBySummonerId(summonerId);
         SummonerLeague summonerLeague = new SummonerLeague();
         summonerLeague.setPositionsSet(leagues);

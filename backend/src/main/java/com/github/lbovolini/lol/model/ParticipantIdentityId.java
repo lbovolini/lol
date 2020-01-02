@@ -14,7 +14,7 @@ public class ParticipantIdentityId implements Serializable {
     @JsonIgnore
     private Summoner summoner;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "match_history_id")
     public MatchHistory getMatchHistory() {
         return matchHistory;

@@ -25,7 +25,11 @@ const SummonerScreen = ({navigation}) => {
         <>
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.container}>
-                <Summoner summoner={summoner} version={version} />
+                <Summoner summoner={summoner} version={version}>
+                    <View>
+                        <Button title="Update" onPress={() => searchApi(summonerName, region, true)}/>
+                    </View>
+                </Summoner>                
                 <FlatList
                     horizontal
                     showsHorizontalScrollIndicator={false}
@@ -35,9 +39,6 @@ const SummonerScreen = ({navigation}) => {
                         return <League league={item} />
                     }}
                 />
-            </View>
-            <View>
-                <Button title="Update" onPress={() => searchApi(summonerName, region, true)}/>
             </View>
             <FlatList
                 data={match}

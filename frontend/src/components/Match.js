@@ -16,11 +16,11 @@ const Match = ({match, summonerId, state}) => {
 
     const getParticipantId = (summonerId) => {
         return match.participantIdentities
-            .filter((p) => p.summoner.id === summonerId)[0].participantId
+            .filter((p) => p.summoner.id == summonerId)[0].participantId
     }
     
     const getParticipant = (participantId) => {
-        return match.participants.filter((p) => p.participantId === participantId)[0]
+        return match.participants.filter((p) => p.participantId == participantId)[0]
     }
 
     const getLevel = () => {
@@ -89,6 +89,9 @@ const Match = ({match, summonerId, state}) => {
     const duration = getDuration()
     const participantId = getParticipantId(summonerId)
     const participant = getParticipant(participantId)
+
+    console.log(participant)
+
 
     const kda = getKDA()
     const level = getLevel()
