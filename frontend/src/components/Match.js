@@ -11,7 +11,7 @@ const Match = ({match, summonerId, state}) => {
         const min = Math.floor(match.gameDuration / 60)
         const sec = match.gameDuration % 60
 
-        return `${min} min ${sec} sec`
+        return `${min}:${sec}`
     }
 
     const getParticipantId = (summonerId) => {
@@ -106,45 +106,26 @@ const Match = ({match, summonerId, state}) => {
                 <Text>{match.gameMode}</Text>
                 <Text>{created}</Text>
                 <Text>{duration}</Text>
-                <Text>KDA: {kda}</Text>
-                <Text>CS/min: {csmin}</Text>
-                <Text>Damage: {totalDamageDealtToChampions}</Text>
             </View>
             <View style={styles.icons}>
                 <Image style={styles.champion} 
                         source={{uri: championImg(participant.championId) }}/>
-                <View style={styles.runes}>
-                    <Image style={styles.rune} 
-                        source={{uri: getRune(participant.perkPrimaryStyle) }}/>
-                    <Image style={styles.rune} 
-                        source={{uri: getRune(participant.perkSubStyle) }}/>
-                </View>
             </View>
             <View style={styles.icons}>
                 <Image style={styles.icon} 
-                        source={{uri: getSpellURI(participant.spell1Id) }}/>
+                    source={{uri: `${cdn}/${version}/img/item/${item0}.png` }}/>
                 <Image style={styles.icon} 
-                        source={{uri: getSpellURI(participant.spell2Id) }}/>
-            </View>
-            <View style={styles.icons}>
-                <View style={styles.iconspart1}>
-                    <Image style={styles.icon} 
-                        source={{uri: `${cdn}/${version}/img/item/${item0}.png` }}/>
-                    <Image style={styles.icon} 
-                        source={{uri: `${cdn}/${version}/img/item/${item1}.png` }}/>
-                    <Image style={styles.icon} 
-                        source={{uri: `${cdn}/${version}/img/item/${item2}.png` }}/>
-                </View>
-                <View style={styles.iconspart2}>
-                    <Image style={styles.icon} 
-                        source={{uri: `${cdn}/${version}/img/item/${item3}.png` }}/>
-                    <Image style={styles.icon} 
-                        source={{uri: `${cdn}/${version}/img/item/${item4}.png` }}/>
-                    <Image style={styles.icon} 
-                        source={{uri: `${cdn}/${version}/img/item/${item5}.png` }}/>
-                    <Image style={styles.icon} 
-                        source={{uri: `${cdn}/${version}/img/item/${item6}.png` }}/>
-                </View>
+                    source={{uri: `${cdn}/${version}/img/item/${item1}.png` }}/>
+                <Image style={styles.icon} 
+                    source={{uri: `${cdn}/${version}/img/item/${item2}.png` }}/>
+                <Image style={styles.icon} 
+                    source={{uri: `${cdn}/${version}/img/item/${item3}.png` }}/>
+                <Image style={styles.icon} 
+                    source={{uri: `${cdn}/${version}/img/item/${item4}.png` }}/>
+                <Image style={styles.icon} 
+                    source={{uri: `${cdn}/${version}/img/item/${item5}.png` }}/>
+                <Image style={styles.icon} 
+                    source={{uri: `${cdn}/${version}/img/item/${item6}.png` }}/>
             </View>
 
         </View>
@@ -159,7 +140,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     info: {
-        width: 100
+        width: 70,
+        alignSelf: 'center'
     },
     win: {
         backgroundColor: '#91bd3a'
@@ -176,19 +158,15 @@ const styles = StyleSheet.create({
         marginRight: 5
     },
     icons: {
+        flexDirection: 'row',
         justifyContent: 'center',
-    },
-    iconspart1: {
-        flexDirection: 'row',
-    },
-    iconspart2: {
-        flexDirection: 'row',
+        alignSelf: 'center'
     },
     champion: {
         width: 55,
         height: 55,
-        borderRadius: 7,
-        marginLeft: 10
+        borderRadius: 50,
+        marginRight: 10
     },
     runes: {
         flexDirection: 'row',
