@@ -1,0 +1,157 @@
+create database lol;
+
+CREATE TABLE IF NOT EXISTS lol.summoner (
+  id VARCHAR(100) NOT NULL,
+  account_id VARCHAR(100) NULL,
+  puuid VARCHAR(100) NULL,
+  name VARCHAR(100) NULL,
+  profile_icon_id INT NULL,
+  revision_date BIGINT(20) NULL,
+  summoner_level INT NULL,
+  platform VARCHAR(20),
+  PRIMARY KEY (id));
+  
+  
+CREATE TABLE IF NOT EXISTS lol.league (
+  id VARCHAR(100) NOT NULL,
+  fresh_blood TINYINT NULL,
+  hot_streak TINYINT NULL,
+  inactive TINYINT NULL,
+  league_points INT NULL,
+  losses INT NULL,
+  queue_type VARCHAR(45) NULL,
+  rank VARCHAR(45) NULL,
+  summoner_id VARCHAR(100) NULL,
+  summoner_name VARCHAR(45) NULL,
+  tier VARCHAR(45) NULL,
+  veteran TINYINT NULL,
+  wins INT NULL,
+  PRIMARY KEY (id));
+
+
+CREATE TABLE IF NOT EXISTS lol.match_history (
+  id BIGINT(20) NOT NULL,
+  game_creation BIGINT(20) NULL,
+  game_duration BIGINT(20) NULL,
+  game_mode VARCHAR(45) NULL,
+  game_type VARCHAR(45) NULL,
+  game_version VARCHAR(45) NULL,
+  map_id VARCHAR(45) NULL,
+  platform_id VARCHAR(45) NULL,
+  queue_id VARCHAR(45) NULL,
+  season_id VARCHAR(45) NULL,
+  account_id VARCHAR(100) NULL,
+  PRIMARY KEY (id));
+  
+
+
+   
+    
+
+CREATE TABLE IF NOT EXISTS lol.participant_identity (
+  participant_id INT NULL,
+  match_history_id BIGINT(20) NOT NULL,
+  summoner_id VARCHAR(100) NOT NULL,
+  PRIMARY KEY (summoner_id, match_history_id),
+    FOREIGN KEY (match_history_id)
+    REFERENCES lol.match_history (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    FOREIGN KEY (summoner_id)
+    REFERENCES lol.summoner (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+
+CREATE TABLE IF NOT EXISTS lol.participant (
+  champion_id INT NULL,
+  participant_id INT NOT NULL,
+  spell1id INT NULL,
+  spell2id INT NULL,
+  team_id INT NULL,
+  match_history_id BIGINT(20) NOT NULL,
+  assists INT NULL,
+  champ_level INT NULL,
+  combat_player_score INT NULL,
+  damage_dealt_to_objectives BIGINT(20) NULL,
+  damage_dealt_to_turrets BIGINT(20) NULL,
+  damage_self_mitigated BIGINT(20) NULL,
+  deaths INT NULL,
+  double_kills INT NULL,
+  first_blood_assist TINYINT NULL,
+  first_blood_kill TINYINT NULL,
+  first_inhibitor_assist TINYINT NULL,
+  first_inhibitor_kill TINYINT NULL,
+  first_tower_assist TINYINT NULL,
+  first_tower_kill TINYINT NULL,
+  gold_earned INT NULL,
+  gold_spent INT NULL,
+  inhibitor_kills INT NULL,
+  item0 INT NULL,
+  item1 INT NULL,
+  item2 INT NULL,
+  item3 INT NULL,
+  item4 INT NULL,
+  item5 INT NULL,
+  item6 INT NULL,
+  killing_sprees INT NULL,
+  kills INT NULL,
+  largest_critical_strike INT NULL,
+  largest_killing_spree INT NULL,
+  largest_multi_kill INT NULL,
+  longest_time_spent_living INT NULL,
+  magic_damage_dealt BIGINT(20) NULL,
+  magic_damage_dealt_to_champions BIGINT(20) NULL,
+  magical_damage_taken BIGINT(20) NULL,
+  neutral_minions_killed INT NULL,
+  penta_kills INT NULL,
+  physical_damage_dealt BIGINT(20) NULL,
+  physical_damage_dealt_to_champions BIGINT(20) NULL,
+  physical_damage_taken BIGINT(20) NULL,
+  quadra_kills INT NULL,
+  sight_wards_bought_in_game INT NULL,
+  team_objective INT NULL,
+  total_damage_dealt BIGINT(20) NULL,
+  total_damage_dealt_to_champions BIGINT(20) NULL,
+  total_damage_taken BIGINT(20) NULL,
+  total_heal BIGINT(20) NULL,
+  total_minions_killed INT NULL,
+  total_player_score INT NULL,
+  triple_kills INT NULL,
+  true_damage_dealt BIGINT(20) NULL,
+  true_damage_dealt_to_champions BIGINT(20) NULL,
+  true_damage_taken BIGINT(20) NULL,
+  turret_kills INT NULL,
+  unreal_kills INT NULL,
+  vision_score BIGINT(20) NULL,
+  vision_wards_bought_in_game INT NULL,
+  wards_killed INT NULL,
+  wards_placed INT NULL,
+  win TINYINT NULL,
+  perk0 INT NULL,
+  perk1 INT NULL,
+  perk2 INT NULL,
+  perk3 INT NULL,
+  perk4 INT NULL,
+  perk5 INT NULL,
+  perk_primary_style INT NULL,
+  perk_sub_style INT NULL,
+  stat_perk0 INT NULL,
+  stat_perk1 INT NULL,
+  stat_perk2 INT NULL,
+  PRIMARY KEY (participant_id, match_history_id),
+    FOREIGN KEY (match_history_id)
+    REFERENCES lol.match_history (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+   
+    
+CREATE TABLE IF NOT EXISTS lol.user (
+  id BIGINT(20) NOT NULL,
+  username VARCHAR(45) NULL,
+  password VARCHAR(255) NULL,
+  PRIMARY KEY (id));
+  
+INSERT INTO user VALUES (1, "admin", "$2a$10$vCHbvXuQK2Hy1yCTSnGxX.Pp06bpyan6VBP.h3iCU1GGyU79zR822")

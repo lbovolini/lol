@@ -90,9 +90,6 @@ const Match = ({match, summonerId, state}) => {
     const participantId = getParticipantId(summonerId)
     const participant = getParticipant(participantId)
 
-    console.log(participant)
-
-
     const kda = getKDA()
     const level = getLevel()
     const goldEarned = getGoldEarned()

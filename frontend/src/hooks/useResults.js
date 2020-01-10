@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import lol from '../api/lol'
 import ddragon from '../api/ddragon'
+import axios from 'axios'
 
 export default (summonerName, region) => {
 
@@ -16,6 +17,25 @@ export default (summonerName, region) => {
                                 error: '',
                             })
         
+
+    const login = (summonerName, region, update) => {
+        try {
+            const user = {"username": "admin", "password": "tugl1fE"}
+            fetch("http://192.168.0.105:8080/" + 'login', {    
+                method: 'POST',    
+                body: JSON.stringify(user)    
+            }).then(res => {
+                const jwtToken = res.headers.get('Authorization');    
+                if (jwtToken !== null) {    
+                    lol.defaults.headers.common['Authorization'] = jwtToken
+                    console.log(jwtToken)
+                }
+            }).then(() => searchApi(summonerName, region, update))
+            .catch((error) => console.log(error))
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     const searchApi = async (summonerName, region, update) => {
         try {
@@ -44,7 +64,7 @@ export default (summonerName, region) => {
     }
 
     useEffect(() => {
-        searchApi(summonerName, region, false)
+        login(summonerName, region, false)
     }, [])
 
     return { state, searchApi }

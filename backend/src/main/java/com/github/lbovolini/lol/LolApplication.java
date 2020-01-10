@@ -17,7 +17,7 @@ public class LolApplication {
 
 	@Bean
 	public ApiConfig apiConfig() {
-		return new ApiConfig().setKey("RGAPI-66773194-00f0-467d-b8c1-29cdf5de4f49");
+		return new ApiConfig().setKey(System.getenv("RIOT_API"));
 	}
 
 	@Bean
