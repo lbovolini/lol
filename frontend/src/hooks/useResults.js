@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import lol from '../api/lol'
 import ddragon from '../api/ddragon'
-import axios from 'axios'
+
+import { BASE_URL } from 'react-native-dotenv'
+import { PASSWORD } from 'react-native-dotenv'
 
 export default (summonerName, region) => {
 
@@ -20,15 +22,14 @@ export default (summonerName, region) => {
 
     const login = (summonerName, region, update) => {
         try {
-            const user = {"username": "admin", "password": "tugl1fE"}
-            fetch("http://192.168.0.105:8080/" + 'login', {    
+            const user = {"username": "admin", "password": PASSWORD}
+            fetch(BASE_URL + '/login', {    
                 method: 'POST',    
                 body: JSON.stringify(user)    
             }).then(res => {
                 const jwtToken = res.headers.get('Authorization');    
                 if (jwtToken !== null) {    
                     lol.defaults.headers.common['Authorization'] = jwtToken
-                    console.log(jwtToken)
                 }
             }).then(() => searchApi(summonerName, region, update))
             .catch((error) => console.log(error))
