@@ -14,8 +14,9 @@ const navigator = createStackNavigator(
    {
       initialRouteName: 'Home',
       defaultNavigationOptions: {
-         title: 'App'
-      }
+         title: 'Lol History'
+      },
+      headerLayoutPreset: 'center'
    }
 )
 
