@@ -2,7 +2,6 @@ package com.github.lbovolini.lol.service;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 
@@ -19,8 +18,9 @@ public class AuthenticationService {
 
     static public void addJWTToken(HttpServletResponse response, String username) {
         String JwtToken = Jwts.builder().setSubject(username)
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATIONTIME))
-                .signWith(Keys.hmacShaKeyFor(SIGNINGKEY.getBytes()), SignatureAlgorithm.HS512)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATIONTIME * 1000))
+                .signWith(SignatureAlgorithm.HS512, SIGNINGKEY)
                 .compact();
         response.addHeader("Authorization", BEARER_PREFIX + " " + JwtToken);
         response.addHeader("Access-Control-Expose-Headers", "Authorization");
@@ -30,7 +30,7 @@ public class AuthenticationService {
         String token = request.getHeader("Authorization");
         if (token != null) {
             String user = Jwts.parser()
-                    .setSigningKey(SIGNINGKEY.getBytes())
+                    .setSigningKey(SIGNINGKEY)
                     .parseClaimsJws(token.replace(BEARER_PREFIX, ""))
                     .getBody()
                     .getSubject();
