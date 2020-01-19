@@ -31,6 +31,7 @@ export default (summonerName, region) => {
                 if (jwtToken !== null) {    
                     lol.defaults.headers.common['Authorization'] = jwtToken
                 }
+                console.log(jwtToken)
             }).then(() => searchApi(summonerName, region, update))
             .catch((error) => console.log(error))
         } catch (err) {
@@ -60,6 +61,7 @@ export default (summonerName, region) => {
                     })
 
         } catch (err) {
+            console.log(err)
             setState({...state, error: 'Something went wrong'})
         }
     }
