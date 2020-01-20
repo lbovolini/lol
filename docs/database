@@ -154,4 +154,7 @@ CREATE TABLE IF NOT EXISTS lol.user (
   password VARCHAR(255) NULL,
   PRIMARY KEY (id));
   
-INSERT INTO user VALUES (1, "admin", "$2a$10$vCHbvXuQK2Hy1yCTSnGxX.Pp06bpyan6VBP.h3iCU1GGyU79zR822")
+USE lol;
+  
+INSERT INTO user VALUES (1, "admin", "$2a$10$vCHbvXuQK2Hy1yCTSnGxX.Pp06bpyan6VBP.h3iCU1GGyU79zR822");
+
