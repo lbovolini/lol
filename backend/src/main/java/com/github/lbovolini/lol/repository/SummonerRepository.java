@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SummonerRepository extends JpaRepository<Summoner, String> {
-    @Query(value = "SELECT * FROM summoner s WHERE lower(replace(s.name, ' ', '')) = lower(replace(?1 , ' ', '')) collate utf8mb4_bin AND s.platform = ?2 ",
+    @Query(value = "SELECT * FROM summoner s WHERE lower(replace(s.name, ' ', '')) = lower(replace(?1 , ' ', '')) collate utf8_bin AND s.platform = ?2 ",
             nativeQuery = true)
     Summoner findByNameAndPlatform(String name, String platform);
 }
