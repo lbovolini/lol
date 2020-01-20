@@ -9,7 +9,11 @@ const Match = ({match, summonerId, state}) => {
 
     const getDuration = () => {
         const min = Math.floor(match.gameDuration / 60)
-        const sec = match.gameDuration % 60
+        let sec = match.gameDuration % 60
+
+        if (sec < 10) {
+            sec = '0' + sec
+        }
 
         return `${min}:${sec}`
     }
