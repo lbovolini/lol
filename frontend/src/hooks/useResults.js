@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import lol from '../api/lol'
 import ddragon from '../api/ddragon'
+import axios from 'axios'
 
 import { BASE_URL } from 'react-native-dotenv'
 import { PASSWORD } from 'react-native-dotenv'
@@ -23,15 +24,14 @@ export default (summonerName, region) => {
     const login = (summonerName, region, update) => {
         try {
             const user = {"username": "admin", "password": PASSWORD}
-            fetch(BASE_URL + '/login', {    
+            fetch(`${BASE_URL}/login`, {    
                 method: 'POST',    
                 body: JSON.stringify(user)    
             }).then(res => {
                 const jwtToken = res.headers.get('Authorization');    
                 if (jwtToken !== null) {    
-                    lol.defaults.headers.common['Authorization'] = jwtToken
+                    axios.defaults.headers.common['Authorization'] = jwtToken
                 }
-                console.log(jwtToken)
             }).then(() => searchApi(summonerName, region, update))
             .catch((error) => console.log(error))
         } catch (err) {
@@ -48,7 +48,7 @@ export default (summonerName, region) => {
             const champion = await ddragon.get(`/cdn/${version}/data/${language}/champion.json`)
             const runes    = await ddragon.get(`/cdn/${version}/data/${language}/runesReforged.json`)
             const spells   = null
-            const data     = await lol.get(`/${summonerName}/${region}/all.json?update=${update}`)
+            const data     = await axios.get(`${BASE_URL}/api/v1/${summonerName}/${region}/all.json?update=${update}`)
 
             setState({  version:  version,
                         language: language,
