@@ -13,6 +13,7 @@ import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 import net.rithms.riot.constant.Platform;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class MatchService {
         Platform region = Region.get(platform);
         SummonerMatch summonerMatch = new SummonerMatch();
 
-        List<MatchHistory> matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId);
+        List<MatchHistory> matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId, PageRequest.of(0, 2));
 
         if (update) {
             matchHistoryList = updateMatchHistory(region, accountId);
