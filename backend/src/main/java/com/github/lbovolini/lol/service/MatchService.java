@@ -42,7 +42,7 @@ public class MatchService {
         Platform region = Region.get(platform);
         SummonerMatch summonerMatch = new SummonerMatch();
 
-        List<MatchHistory> matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId, PageRequest.of(0, 2));
+        List<MatchHistory> matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId, PageRequest.of(0, 20));
 
         if (update) {
             matchHistoryList = updateMatchHistory(region, accountId);
