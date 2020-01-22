@@ -8,7 +8,7 @@ const MatchDetailsScreen = ({navigation}) => {
     const state = navigation.getParam('state', '')
     const index = navigation.getParam('index', '')
 
-    const data = state.data.history.matchHistoryList[index].participantIdentities
+    const data = state.history[index].participantIdentities
 
     return (
         <>
