@@ -17,6 +17,8 @@ export default (summonerName, region) => {
                                 runes: null,
                                 spells: null,
                                 data: null,
+                                history: [],
+                                page: 0,
                                 error: '',
                             })
         
@@ -48,7 +50,8 @@ export default (summonerName, region) => {
             const champion = await ddragon.get(`/cdn/${version}/data/${language}/champion.json`)
             const runes    = await ddragon.get(`/cdn/${version}/data/${language}/runesReforged.json`)
             const spells   = null
-            const data     = await axios.get(`${BASE_URL}/api/v1/${summonerName}/${region}/all.json?update=${update}`)
+            const {page} = state
+            const data     = await axios.get(`${BASE_URL}/api/v1/${summonerName}/${region}/all.json?update=${update}&page=${page}`)
 
             setState({  version:  version,
                         language: language,
@@ -57,7 +60,9 @@ export default (summonerName, region) => {
                         champion: champion.data.data,
                         runes:    runes.data,
                         spells:   spells,
-                        data:     data.data       
+                        data:     data.data,
+                        history: [...state.history, ...data.data.history.matchHistoryList],
+                        page: page + 1       
                     })
 
         } catch (err) {

@@ -29,13 +29,13 @@ public class APIv1Controller {
     MatchService matchService;
 
     @RequestMapping("/{name}/{platform}/all.json")
-    public ResponseEntity getAllInfo(@PathVariable String name, @PathVariable String platform, @RequestParam boolean update) {
+    public ResponseEntity getAllInfo(@PathVariable String name, @PathVariable String platform, @RequestParam boolean update, @RequestParam int page) {
 
         Map response = new HashMap(3);
 
         Summoner summoner = summonerService.findByNameAndPlatform(name, platform, update);
         SummonerLeague summonerLeague = leagueService.findAllLeague(summoner.getId(), platform, update);
-        SummonerMatch summonerMatch = matchService.findMatchHistory(platform, summoner.getAccountId(), update);
+        SummonerMatch summonerMatch = matchService.findMatchHistory(platform, summoner.getAccountId(), update, page);
 
         response.put("summoner", summoner);
         response.put("leagues", summonerLeague);

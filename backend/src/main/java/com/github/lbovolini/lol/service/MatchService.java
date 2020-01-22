@@ -37,12 +37,12 @@ public class MatchService {
     @Autowired
     ParticipantRepository participantRepository;
 
-    public SummonerMatch findMatchHistory(String platform, String accountId, boolean update) {
+    public SummonerMatch findMatchHistory(String platform, String accountId, boolean update, int page) {
 
         Platform region = Region.get(platform);
         SummonerMatch summonerMatch = new SummonerMatch();
 
-        List<MatchHistory> matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId, PageRequest.of(0, 20));
+        List<MatchHistory> matchHistoryList = matchRepository.findByAccountIdOrderByGameCreationDesc(accountId, PageRequest.of(page, 20));
 
         if (update) {
             matchHistoryList = updateMatchHistory(region, accountId);

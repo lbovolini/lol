@@ -19,7 +19,7 @@ const SummonerScreen = ({navigation}) => {
     const summoner = state.data.summoner
     const version  = state.version
     const league   = state.data.leagues.positionsSet
-    const match    = state.data.history.matchHistoryList
+    const match    = state.history
 
     return (
         <>
@@ -58,6 +58,8 @@ const SummonerScreen = ({navigation}) => {
                         </TouchableOpacity>
                         )
                 }}
+                onEndReached={() => searchApi(summonerName, region, true)}
+                onEndReachedThreshold={0.1}
             />
         </ScrollView>
         </>
