@@ -39,6 +39,10 @@ public class MatchService {
 
     public SummonerMatch findMatchHistory(String platform, String accountId, boolean update, int page) {
 
+        if (update) {
+            page = 0;
+        }
+
         Platform region = Region.get(platform);
         SummonerMatch summonerMatch = new SummonerMatch();
 

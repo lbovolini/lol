@@ -43,6 +43,10 @@ export default (summonerName, region) => {
 
     const searchApi = async (summonerName, region, update) => {
         try {
+
+           
+           
+
             const realm    = await ddragon.get(`/realms/${region.toLowerCase()}.json`)
             const version  = realm.data.v
             const language = realm.data.l
@@ -50,9 +54,10 @@ export default (summonerName, region) => {
             const champion = await ddragon.get(`/cdn/${version}/data/${language}/champion.json`)
             const runes    = await ddragon.get(`/cdn/${version}/data/${language}/runesReforged.json`)
             const spells   = null
-            const {page} = state
+            const { page } = state
             const data     = await axios.get(`${BASE_URL}/api/v1/${summonerName}/${region}/all.json?update=${update}&page=${page}`)
 
+            if (!update) {
             setState({  version:  version,
                         language: language,
                         region:   region.toLowerCase(),
@@ -62,8 +67,21 @@ export default (summonerName, region) => {
                         spells:   spells,
                         data:     data.data,
                         history: [...state.history, ...data.data.history.matchHistoryList],
-                        page: page + 1       
+                        page: page + 1,
                     })
+                } else {
+                    setState({  version:  version,
+                        language: language,
+                        region:   region.toLowerCase(),
+                        summoner: summoner.data.data,
+                        champion: champion.data.data,
+                        runes:    runes.data,
+                        spells:   spells,
+                        data:     data.data,
+                        history: data.data.history.matchHistoryList,
+                        page: page + 1,
+                    })
+                }
 
         } catch (err) {
             console.log(err)

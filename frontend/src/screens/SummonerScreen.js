@@ -23,26 +23,8 @@ const SummonerScreen = ({navigation}) => {
 
     return (
         <>
-        <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={styles.container}>
-                <Summoner summoner={summoner} version={version}>
-                    <View>
-                        <Button title="Update" onPress={() => searchApi(summonerName, region, true)}/>
-                    </View>
-                </Summoner>                
-                <FlatList
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    data={league.sort((a, b) => b.queueType.localeCompare(a.queueType))}
-                    keyExtractor={(result) => result.id}
-                    renderItem={({item}) => {
-                        return <League league={item} />
-                    }}
-                />
-            </View>
             <FlatList
                 data={match}
-                showsVerticalScrollIndicator={false}
                 keyExtractor={(m) => m.id}
                 renderItem={({item, index}) => {
                     return (
@@ -58,10 +40,27 @@ const SummonerScreen = ({navigation}) => {
                         </TouchableOpacity>
                         )
                 }}
-                onEndReached={() => searchApi(summonerName, region, true)}
+                ListHeaderComponent={
+                    <View style={styles.container}>
+                        <Summoner summoner={summoner} version={version}>
+                            <View>
+                                <Button title="Update" onPress={() => searchApi(summonerName, region, true)}/>
+                            </View>
+                        </Summoner>                
+                        <FlatList
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            data={league.sort((a, b) => b.queueType.localeCompare(a.queueType))}
+                            keyExtractor={(result) => result.id}
+                            renderItem={({item}) => {
+                                return <League league={item} />
+                            }}
+                        />
+                    </View>
+                }
+                onEndReached={() => searchApi(summonerName, region, false)}
                 onEndReachedThreshold={0.1}
             />
-        </ScrollView>
         </>
     )
 }
