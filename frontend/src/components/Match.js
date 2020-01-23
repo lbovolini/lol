@@ -119,10 +119,10 @@ const Match = ({match, summonerId, state}) => {
     return(
         <View style={[styles.container, win ? styles.win : styles.lose]}>
             <View style={styles.info}>
-                <Text>{match.gameMode}</Text>
-                <Text>{created}</Text>
-                <Text>{duration}</Text>
-                <Text>{getKills()}/{getDeaths()}/{getAssists()}</Text>
+                <Text style={styles.centerText}>{match.gameMode}</Text>
+                <Text style={styles.centerText}>{created}</Text>
+                <Text style={styles.centerText}>{duration}</Text>
+                <Text style={styles.centerText}>{getKills()}/{getDeaths()}/{getAssists()}</Text>
             </View>
             <View style={styles.icons}>
                 <Image style={styles.champion} 
@@ -158,6 +158,10 @@ const styles = StyleSheet.create({
     },
     info: {
         width: 70,
+        alignSelf: 'center',
+        paddingRight: 10
+    },
+    centerText: {
         alignSelf: 'center'
     },
     win: {
