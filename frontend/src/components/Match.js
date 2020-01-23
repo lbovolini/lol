@@ -38,6 +38,18 @@ const Match = ({match, summonerId, state}) => {
         return ((participant.assists + participant.kills) / 1).toFixed(2)
     }
 
+    const getKills = () => {
+        return participant.deaths
+    }
+
+    const getDeaths = () => {
+        return participant.deaths
+    }
+
+    const getAssists = () => {
+        return participant.assists
+    }
+
     const getGoldEarned = () => {
         return participant.goldEarned 
     }
@@ -110,6 +122,7 @@ const Match = ({match, summonerId, state}) => {
                 <Text>{match.gameMode}</Text>
                 <Text>{created}</Text>
                 <Text>{duration}</Text>
+                <Text>{getKills()}/{getDeaths()}/{getAssists()}</Text>
             </View>
             <View style={styles.icons}>
                 <Image style={styles.champion} 
