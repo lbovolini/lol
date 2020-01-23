@@ -252,7 +252,6 @@ const styles = StyleSheet.create({
         borderRadius: 7,
         marginBottom: 5,
         backgroundColor: 'black',
-        marginHorizontal: 20
     },
     spell: {
         width: 25,
@@ -262,7 +261,8 @@ const styles = StyleSheet.create({
         marginRight: 5
     },
     details: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingHorizontal: 20
     },
     headList: {
         margin: 5
