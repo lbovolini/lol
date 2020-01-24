@@ -94,6 +94,17 @@ const Match = ({match, summonerId, state}) => {
         }
     }
 
+    const getGameType = () => {
+        const queues = state.queues
+        const queueId = match.queueId
+
+        for (var key of Object.keys(queues)) {
+            if (queues[key].queueId == queueId) {
+                return queues[key].description.replace('5v5 ', '').replace(' games', '')
+            }
+        }
+    }
+
     const cdn = 'http://ddragon.leagueoflegends.com/cdn'
 
     const version  = state.version 
@@ -119,7 +130,7 @@ const Match = ({match, summonerId, state}) => {
     return(
         <View style={[styles.container, win ? styles.win : styles.lose]}>
             <View style={styles.info}>
-                <Text style={styles.centerText}>{match.gameMode}</Text>
+                <Text style={styles.centerText}>{getGameType()}</Text>
                 <Text style={styles.centerText}>{created}</Text>
                 <Text style={styles.centerText}>{duration}</Text>
                 <Text style={styles.centerText}>{getKills()}/{getDeaths()}/{getAssists()}</Text>
@@ -157,7 +168,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     info: {
-        width: 70,
+        width: 100,
         alignSelf: 'center',
         paddingRight: 10
     },

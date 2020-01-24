@@ -50,6 +50,7 @@ export default (summonerName, region) => {
             const summoner = await ddragon.get(`/cdn/${version}/data/${language}/summoner.json`)
             const champion = await ddragon.get(`/cdn/${version}/data/${language}/champion.json`)
             const runes    = await ddragon.get(`/cdn/${version}/data/${language}/runesReforged.json`)
+            const queues   = await axios.get('http://static.developer.riotgames.com/docs/lol/queues.json')
             const spells   = null
             const { page } = state
             const data     = await axios.get(`${BASE_URL}/api/v1/${summonerName}/${region}/all.json?update=${update}&page=${page}`)
@@ -61,6 +62,7 @@ export default (summonerName, region) => {
                     summoner: summoner.data.data,
                     champion: champion.data.data,
                     runes:    runes.data,
+                    queues:   queues.data,
                     spells:   spells,
                     data:     data.data,
                     history: [...state.history, ...data.data.history.matchHistoryList],
@@ -73,6 +75,7 @@ export default (summonerName, region) => {
                     summoner: summoner.data.data,
                     champion: champion.data.data,
                     runes:    runes.data,
+                    queues:   queues.data,
                     spells:   spells,
                     data:     data.data,
                     history: data.data.history.matchHistoryList,
