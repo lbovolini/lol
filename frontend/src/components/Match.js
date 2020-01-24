@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     info: {
-        width: 110,
+        width: 90,
         alignSelf: 'center',
         paddingRight: 10
     },
