@@ -1,10 +1,11 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
+import moment from 'moment'
 
 const Match = ({match, summonerId, state}) => {
 
     const getMatchCreatedData = () => {
-        return new Date(match.gameCreation).toLocaleDateString()
+        return moment(new Date(match.gameCreation)).fromNow()
     }
 
     const getDuration = () => {
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     info: {
-        width: 100,
+        width: 110,
         alignSelf: 'center',
         paddingRight: 10
     },
