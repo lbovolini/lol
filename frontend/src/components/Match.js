@@ -39,7 +39,7 @@ const Match = ({match, summonerId, state}) => {
     }
 
     const getKills = () => {
-        return participant.deaths
+        return participant.kills
     }
 
     const getDeaths = () => {
