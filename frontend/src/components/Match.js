@@ -153,8 +153,8 @@ const Match = ({match, summonerId, state}) => {
                     source={{uri: `${cdn}/${version}/img/item/${item4}.png` }}/>
                 <Image style={styles.icon} 
                     source={{uri: `${cdn}/${version}/img/item/${item5}.png` }}/>
-                <Image style={styles.icon} 
-                    source={{uri: `${cdn}/${version}/img/item/${item6}.png` }}/>
+                {/*<Image style={styles.icon} 
+                    source={{uri: `${cdn}/${version}/img/item/${item6}.png` }}/>*/}
             </View>
 
         </View>
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     info: {
-        width: 90,
+        width: 97,
         alignSelf: 'center',
         paddingRight: 10
     },
